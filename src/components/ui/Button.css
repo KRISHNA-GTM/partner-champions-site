@@ -1,0 +1,125 @@
+.btn {
+  --btn-bg: var(--royal);
+  --btn-fg: #fff;
+  --btn-border: transparent;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 26px;
+  border: 1.5px solid var(--btn-border);
+  border-radius: 999px;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    background 0.25s,
+    color 0.25s,
+    border-color 0.25s,
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s;
+}
+
+.btn svg {
+  transition: transform 0.35s var(--ease-out);
+}
+
+.btn:hover svg {
+  transform: translateX(4px);
+}
+
+.btn--primary {
+  box-shadow: 0 10px 30px -12px rgba(21, 94, 239, 0.75);
+}
+
+.btn--primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(100deg, var(--royal) 0%, var(--electric) 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn--primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 36px -12px rgba(21, 94, 239, 0.85);
+}
+
+.btn--primary:hover::before {
+  opacity: 1;
+}
+
+.btn--ghost-dark {
+  --btn-bg: transparent;
+  --btn-fg: #fff;
+  --btn-border: rgba(255, 255, 255, 0.28);
+}
+
+.btn--ghost-dark:hover {
+  --btn-border: rgba(255, 255, 255, 0.7);
+  --btn-bg: rgba(255, 255, 255, 0.06);
+}
+
+.btn--ghost-light {
+  --btn-bg: transparent;
+  --btn-fg: var(--navy-700);
+  --btn-border: var(--line-strong);
+}
+
+.btn--ghost-light:hover {
+  --btn-border: var(--navy-700);
+}
+
+.btn--small {
+  min-height: 44px;
+  padding: 0 20px;
+  font-size: 0.9375rem;
+}
+
+/* Inline text link with animated arrow */
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  border: 0;
+  background: none;
+  color: var(--royal);
+  font-weight: 600;
+  font-size: var(--fs-small);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.text-link span {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat;
+  transition: background-size 0.35s var(--ease-out);
+}
+
+.text-link:hover span {
+  background-size: 100% 1.5px;
+}
+
+.text-link svg {
+  transition: transform 0.35s var(--ease-out);
+}
+
+.text-link:hover svg {
+  transform: translateX(4px);
+}
+
+.on-dark .text-link {
+  color: var(--sky);
+}
