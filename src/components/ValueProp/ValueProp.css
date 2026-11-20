@@ -1,0 +1,242 @@
+.value {
+  position: relative;
+  padding: var(--section-y) 0 calc(var(--section-y) * 0.45);
+  background: var(--paper);
+}
+
+.value__head {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(32px, 6vw, 96px);
+  align-items: end;
+}
+
+.value__title {
+  margin-top: 22px;
+  max-width: 12.5em;
+}
+
+.value__intro {
+  display: grid;
+  gap: 22px;
+  padding-bottom: 8px;
+}
+
+.value__who {
+  color: var(--ink);
+  font-size: var(--fs-small);
+  padding-left: 18px;
+  border-left: 2px solid var(--gold);
+  max-width: 32em;
+}
+
+.value__audience {
+  display: grid;
+  gap: 10px;
+}
+
+.value__audience > span {
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.value__audience ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.value__audience li {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--navy-700);
+  background: var(--mist);
+}
+
+/* Ascending outcome line */
+.ascent {
+  position: relative;
+  height: clamp(500px, 42vw, 560px);
+  margin-top: clamp(56px, 7vw, 100px);
+}
+
+.ascent__line {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.ascent__path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 2.2s var(--ease-in-out);
+}
+
+.ascent__area {
+  opacity: 0;
+  transition: opacity 1.4s 0.9s;
+}
+
+.ascent.is-drawn .ascent__path {
+  stroke-dashoffset: 0;
+}
+
+.ascent.is-drawn .ascent__area {
+  opacity: 1;
+}
+
+.ascent__step {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 30%;
+  padding: 34px 0 0 0;
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.8s var(--ease-out),
+    transform 0.8s var(--ease-out);
+  transition-delay: calc(0.35s + var(--i) * 0.55s);
+}
+
+.ascent.is-drawn .ascent__step {
+  opacity: 1;
+  transform: none;
+}
+
+.ascent__dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  margin: -7px 0 0 -7px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 3px solid var(--royal);
+  box-shadow: 0 0 0 6px rgba(21, 94, 239, 0.1);
+}
+
+.ascent__dot.is-gold {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 6px rgba(213, 166, 43, 0.15);
+}
+
+.ascent__glyph {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  padding: 8px;
+  border-radius: 14px;
+  background: var(--mist);
+  border: 1px solid var(--line);
+}
+
+.ascent__glyph svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--navy-700);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ascent__glyph .fill-gold {
+  fill: var(--gold);
+  stroke: none;
+}
+
+.ascent__glyph .fill-blue {
+  fill: var(--royal);
+  stroke: none;
+}
+
+.ascent__glyph .stroke-gold {
+  stroke: var(--gold);
+}
+
+.ascent__num {
+  display: block;
+  margin-bottom: 6px;
+  font-size: var(--fs-micro);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--royal);
+}
+
+.ascent__step h3 {
+  font-size: clamp(1.5rem, 1.1rem + 1.3vw, 2.25rem);
+  color: var(--navy-700);
+  margin-bottom: 10px;
+}
+
+.ascent__step p {
+  max-width: 21em;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 960px) {
+  .value__head {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+@media (max-width: 760px) {
+  .ascent {
+    height: auto;
+    margin-top: 56px;
+  }
+
+  .ascent__line {
+    display: none;
+  }
+
+  .ascent__steps {
+    position: relative;
+    display: grid;
+    gap: 40px;
+    padding-left: 28px;
+  }
+
+  .ascent__steps::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    background: linear-gradient(var(--sky), var(--royal) 70%, var(--gold));
+    border-radius: 2px;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: transform 1.6s var(--ease-in-out);
+  }
+
+  .ascent.is-drawn .ascent__steps::before {
+    transform: none;
+  }
+
+  .ascent__step {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    padding-top: 0;
+    transition-delay: calc(0.2s + var(--i) * 0.3s);
+  }
+
+  .ascent__dot {
+    top: 6px;
+    left: -22px;
+  }
+}
