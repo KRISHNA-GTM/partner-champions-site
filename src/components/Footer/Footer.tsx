@@ -1,8 +1,8 @@
 import logoWhite from '../../assets/logo-white.png'
-import { COMPANY_NAME, SOCIAL_LINKS, TAGLINE } from '../../config/site'
+import { COMPANY_NAME, CONTACT_EMAIL, SOCIAL_LINKS, TAGLINE } from '../../config/site'
 import { NAV_ITEMS } from '../../data/content'
 import { BookingCta } from '../contact/BookingCta'
-import { CopyEmail } from '../contact/CopyEmail'
+import { mailtoHref } from '../../utils/contact'
 import { ArrowRight } from '../ui/Icons'
 import './Footer.css'
 
@@ -37,7 +37,9 @@ export function Footer() {
 
           <div className="footer__col">
             <p className="footer__heading">Contact</p>
-            <CopyEmail tone="dark" />
+            <a href={mailtoHref()} className="footer__email">
+              {CONTACT_EMAIL}
+            </a>
             <BookingCta className="text-link footer__talk">
               <span>Let's talk</span> <ArrowRight size={16} />
             </BookingCta>
