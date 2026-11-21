@@ -1,55 +1,56 @@
 import { SERVICES } from '../../data/content'
 import { vars } from '../../utils/style'
-import { useContact } from '../contact/ContactContext'
+import { BookingCta } from '../contact/BookingCta'
 import { ArrowRight } from '../ui/Icons'
-import { ServiceArt } from './ServiceVisuals'
+import { SectionHeading } from '../ui/SectionHeading'
 import './Services.css'
 
 export function Services() {
-  const { openContact } = useContact()
-
   return (
-    <section id="services" className="services" aria-labelledby="services-title">
+    <section id="services" className="services section" aria-labelledby="services-title">
       <div className="container">
-        <header className="services__head">
-          <div className="reveal">
-            <p className="eyebrow">What We Do</p>
-            <h2 id="services-title" className="section-title">
-              Marketing built for the <span className="hl">partner ecosystem.</span>
-            </h2>
-          </div>
-          <p className="lead reveal" style={vars({ '--delay': '120ms' })}>
-            From strategic planning to hands-on execution, we help brands make partner marketing work harder.
-          </p>
-        </header>
+        <SectionHeading
+          id="services-title"
+          eyebrow="What we do"
+          layout="split"
+          title={
+            <>
+              Six services. <span className="hl">Real deliverables.</span>
+            </>
+          }
+          lead="Each service is something we plan and produce for you, not advice you still have to act on. Take one, or combine them into a full partner program."
+        />
 
-        <ul className="services__grid">
+        <ul className="svc-grid">
           {SERVICES.map((s, i) => (
-            <li key={s.num} className={`svc svc--${s.visual} reveal`} style={vars({ '--delay': `${(i % 3) * 90}ms` })}>
-              <article className="svc__inner" aria-labelledby={`svc-${s.num}`}>
-                <div className="svc__art">
-                  <ServiceArt visual={s.visual} />
-                </div>
-                <div className="svc__body">
+            <li key={s.num} className="svc reveal" style={vars({ '--delay': `${(i % 3) * 80}ms` })}>
+              <article aria-labelledby={`svc-${s.num}`}>
+                <div className="svc__top">
                   <span className="svc__num" aria-hidden="true">
                     {s.num}
                   </span>
                   <h3 id={`svc-${s.num}`}>{s.title}</h3>
-                  <p>{s.description}</p>
-                  <button
-                    type="button"
-                    className="text-link svc__link"
-                    aria-haspopup="dialog"
-                    onClick={() => openContact(s.title)}
-                  >
-                    <span>{s.cta}</span>
-                    <ArrowRight size={16} />
-                  </button>
                 </div>
+                <p className="svc__summary">{s.summary}</p>
+                <p className="svc__label">What we deliver</p>
+                <ul className="svc__list">
+                  {s.deliverables.map((d) => (
+                    <li key={d}>{d}</li>
+                  ))}
+                </ul>
               </article>
             </li>
           ))}
         </ul>
+
+        <div className="svc-cta reveal">
+          <p>
+            <strong>Not sure which of these you need?</strong> That is what the first conversation is for.
+          </p>
+          <BookingCta className="btn btn--ghost-light">
+            Explore How We Can Help <ArrowRight />
+          </BookingCta>
+        </div>
       </div>
     </section>
   )
