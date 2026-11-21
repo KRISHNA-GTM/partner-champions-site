@@ -24,12 +24,6 @@ export const ArrowUpRight = ({ size = 18, className }: IconProps) => (
   </svg>
 )
 
-export const ArrowDown = ({ size = 18, className }: IconProps) => (
-  <svg {...base(size)} className={className}>
-    <path d="M12 4v15M6 13l6 6 6-6" />
-  </svg>
-)
-
 export const Mail = ({ size = 18, className }: IconProps) => (
   <svg {...base(size)} className={className}>
     <rect x="3" y="5" width="18" height="14" rx="2" />
