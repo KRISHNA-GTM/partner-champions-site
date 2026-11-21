@@ -75,7 +75,7 @@ function LandingPage() {
   )
 }
 
-function Email() {
+export function Email() {
   return (
     <div className="mk mk-email">
       <div className="mk-email__meta">
@@ -111,7 +111,7 @@ function Email() {
   )
 }
 
-function Webinar() {
+export function Webinar() {
   return (
     <div className="mk mk-webinar">
       <span className="mk-live">Live webinar</span>
@@ -163,7 +163,7 @@ const KIT = [
   { name: 'Call script and follow-up', meta: 'Talk track', type: 'DOC' },
 ]
 
-function CampaignKit() {
+export function CampaignKit() {
   return (
     <div className="mk mk-kit">
       <div className="mk-kit__head">
@@ -290,13 +290,12 @@ export function Showcase() {
         <SectionHeading
           id="work-title"
           eyebrow="What execution looks like"
-          layout="split"
           title={
             <>
               Campaigns partners can <span className="hl">put to work.</span>
             </>
           }
-          lead="One campaign, built out across the assets partners actually use. These are illustrative examples of the work we produce, made for this site. They are not client campaigns."
+          lead="One campaign, built out across the assets partners use. Illustrative examples made for this site, not client work."
         />
 
         <ul className="work__grid">
