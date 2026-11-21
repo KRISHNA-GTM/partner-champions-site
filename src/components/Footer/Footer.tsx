@@ -39,7 +39,7 @@ export function Footer() {
             <p className="footer__heading">Contact</p>
             <CopyEmail tone="dark" />
             <BookingCta className="text-link footer__talk">
-              <span>Book a call</span> <ArrowRight size={16} />
+              <span>Let's talk</span> <ArrowRight size={16} />
             </BookingCta>
             {socials.length > 0 && (
               <ul className="footer__social">

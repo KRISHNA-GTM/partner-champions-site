@@ -1,25 +1,26 @@
+/* Continues the final CTA's navy surface; a hairline inside the container separates them */
 .footer {
-  padding: clamp(64px, 8vw, 96px) 0 32px;
+  padding: 0 0 var(--s-6);
   background: var(--navy-900);
   color: var(--on-dark-soft);
-  border-top: 1px solid var(--line-dark);
 }
 
 .footer__top {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1.2fr);
-  gap: 48px;
-  padding-bottom: 56px;
+  gap: var(--s-7);
+  padding: var(--s-8) 0 var(--s-7);
+  border-top: 1px solid var(--line-dark);
   border-bottom: 1px solid var(--line-dark);
 }
 
 .footer__logo {
-  width: 200px;
+  width: 180px;
   height: auto;
 }
 
 .footer__tagline {
-  margin-top: 22px;
+  margin-top: var(--s-5);
   max-width: 18em;
   font-family: var(--font-display);
   font-size: clamp(1.25rem, 1rem + 0.8vw, 1.6rem);
@@ -71,7 +72,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 12px;
-  padding-top: 28px;
+  padding-top: var(--s-5);
   font-size: 0.8125rem;
   color: var(--on-dark-faint);
 }
@@ -97,6 +98,14 @@
 @media (max-width: 520px) {
   .footer__top {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: var(--s-6);
+    padding-top: var(--s-7);
+  }
+
+  .footer__col nav ul,
+  nav.footer__col ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--s-5);
   }
 }
