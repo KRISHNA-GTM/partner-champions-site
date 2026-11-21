@@ -49,11 +49,11 @@
   --max: 1200px;
 
   /* Section rhythm: default, tight (dense or follow-on sections), loose (statement sections) */
-  --section-y: clamp(80px, 9vw, 128px);
-  --section-y-tight: clamp(64px, 7vw, 96px);
-  --section-y-loose: clamp(96px, 11vw, 160px);
+  --section-y: clamp(64px, 7.5vw, 104px);
+  --section-y-tight: clamp(56px, 6vw, 80px);
+  --section-y-loose: clamp(80px, 9vw, 128px);
   /* Gap between a section heading and the content it introduces */
-  --head-gap: clamp(40px, 5vw, 64px);
+  --head-gap: clamp(32px, 4vw, 48px);
 
   /* Shape and motion */
   --radius-s: 6px;
