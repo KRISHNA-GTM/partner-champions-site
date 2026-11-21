@@ -217,6 +217,13 @@
   width: 100%;
 }
 
+.mobile-menu__email {
+  justify-self: center;
+  color: var(--on-dark-soft);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
 @keyframes menu-in {
   from {
     opacity: 0;

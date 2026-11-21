@@ -4,7 +4,8 @@ import logoWhite from '../../assets/logo-white.png'
 import { NAV_ITEMS } from '../../data/content'
 import { useScrollSpy } from '../../hooks/usePageEffects'
 import { BookingCta } from '../contact/BookingCta'
-import { CopyEmail } from '../contact/CopyEmail'
+import { CONTACT_EMAIL } from '../../config/site'
+import { mailtoHref } from '../../utils/contact'
 import { ArrowRight } from '../ui/Icons'
 import './Header.css'
 
@@ -126,7 +127,9 @@ export function Header() {
           <BookingCta className="btn btn--primary">
             Let's Talk <ArrowRight />
           </BookingCta>
-          <CopyEmail tone="dark" />
+          <a href={mailtoHref()} className="mobile-menu__email">
+            {CONTACT_EMAIL}
+          </a>
         </div>
       </div>
     </header>
