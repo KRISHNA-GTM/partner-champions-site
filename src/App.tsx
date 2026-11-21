@@ -1,14 +1,13 @@
-import { ContactProvider } from './components/contact/ContactContext'
 import { Approach } from './components/Approach/Approach'
-import { Ecosystem } from './components/Ecosystem/Ecosystem'
+import { Challenge } from './components/Challenge/Challenge'
+import { ContactProvider } from './components/contact/ContactContext'
 import { FinalCta } from './components/FinalCta/FinalCta'
 import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
 import { Hero } from './components/Hero/Hero'
-import { Impact } from './components/Impact/Impact'
-import { Resources } from './components/Resources/Resources'
+import { Outcomes } from './components/Outcomes/Outcomes'
 import { Services } from './components/Services/Services'
-import { ValueProp } from './components/ValueProp/ValueProp'
+import { Showcase } from './components/Showcase/Showcase'
 import { useRevealOnScroll } from './hooks/usePageEffects'
 
 export default function App() {
@@ -22,12 +21,11 @@ export default function App() {
       <Header />
       <main id="main">
         <Hero />
-        <ValueProp />
+        <Challenge />
         <Services />
-        <Ecosystem />
+        <Showcase />
         <Approach />
-        <Impact />
-        <Resources />
+        <Outcomes />
         <FinalCta />
       </main>
       <Footer />
