@@ -24,10 +24,10 @@ Everything you are likely to change lives in two files.
 | Setting | What it does |
 |---|---|
 | `SCHEDULING_URL` | Booking link used by every "book a call" button (header, hero, final CTA, footer, contact dialog). Currently a temporary Calendly link. Set it to `''` and those buttons open the contact dialog with the email address instead. |
-| `CONTACT_EMAIL` | Address used in all `mailto:` links and the copy button. |
+| `CONTACT_EMAIL` | Address used in all `mailto:` links. |
 | `SOCIAL_LINKS` | Footer social links. Entries with an empty `href` are hidden. |
 
-`src/data/content.ts`: navigation, audience, challenges, the "where we fit" flow, services and deliverables, process stages and outcomes.
+`src/data/content.ts`: navigation, audience, challenges, the "where we fit" diagram, services (with icon keys) and deliverables, process stages and outcomes.
 
 `src/components/Showcase/Showcase.tsx`: the illustrative asset mockups in "Our Work" (landing page, email, webinar, LinkedIn post, campaign kit, ABM brief, playbook). Copy for the mockups lives in that file.
 
@@ -46,7 +46,7 @@ src/
   components/
     Header/ Hero/ Challenge/ Services/ Showcase/ Approach/
     Outcomes/ FinalCta/ Footer/
-    contact/     booking CTA, contact dialog, copy-email
+    contact/     booking CTA, contact dialog
     ui/          section heading, modal, buttons, icons
 public/          favicon, apple-touch-icon, og-image
 ```
@@ -59,6 +59,6 @@ public/          favicon, apple-touch-icon, og-image
 
 ## Page structure
 
-Hero, The challenge (problems + where we fit), Services, Our work, How we work, Outcomes, Final CTA + footer.
+Hero, Why partner programs stall (problems + where-we-fit diagram), Services, Our work, How we work, Outcomes, Final CTA + footer. The email address appears as a plain mailto link; there are no copy buttons.
 
 Spacing tokens live in `src/styles/tokens.css` (`--s-1` to `--s-9`, `--section-y`, `--section-y-tight`, `--section-y-loose`, `--head-gap`). Every section heading uses `SectionHeading` (`src/components/ui/SectionHeading.tsx`).
