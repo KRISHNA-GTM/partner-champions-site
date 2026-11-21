@@ -148,8 +148,7 @@ button {
   padding-bottom: 0.35em;
 }
 
-/* Eyebrow: gold rule + tracked caps, from the logo's "Partner Marketing Services" line.
-   Line-height 1 and centered items keep the rule on the text's optical center. */
+/* Eyebrow: tracked caps label above a section title */
 .eyebrow {
   display: flex;
   align-items: center;
@@ -164,13 +163,6 @@ button {
   color: var(--royal);
 }
 
-.eyebrow::before {
-  content: '';
-  width: 24px;
-  height: 2px;
-  background: var(--gold);
-  flex: none;
-}
 
 .on-dark .eyebrow {
   color: var(--sky);
