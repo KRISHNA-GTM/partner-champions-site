@@ -107,27 +107,7 @@
   background: var(--royal);
 }
 
-.process__loop {
-  display: flex;
-  align-items: center;
-  gap: var(--s-3);
-  margin-top: var(--s-8);
-  padding-top: var(--s-5);
-  border-top: 1px solid var(--line);
-  color: var(--ink-soft);
-  font-size: var(--fs-small);
-}
 
-.process__loop span {
-  display: grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #fbf4e2;
-  color: #a77a00;
-  font-size: 0.95rem;
-}
 
 /* Tablet and phone: vertical timeline */
 @media (max-width: 900px) {
@@ -169,7 +149,4 @@
     padding-top: 8px;
   }
 
-  .process__loop {
-    margin-top: var(--s-7);
-  }
 }

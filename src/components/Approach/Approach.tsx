@@ -10,13 +10,12 @@ export function Approach() {
         <SectionHeading
           id="approach-title"
           eyebrow="How we work"
-          layout="split"
           title={
             <>
               Four stages, <span className="hl">one team</span> from plan to launch.
             </>
           }
-          lead="You work with the same people from the first review to the campaign results. Each stage ends with something you can use."
+          lead="The same people from first review to campaign results. Each stage ends with something you can use."
         />
 
         <ol className="process">
@@ -39,9 +38,6 @@ export function Approach() {
           ))}
         </ol>
 
-        <p className="process__loop reveal">
-          <span aria-hidden="true">↻</span> What we learn in Optimize becomes the starting point for the next round.
-        </p>
       </div>
     </section>
   )
