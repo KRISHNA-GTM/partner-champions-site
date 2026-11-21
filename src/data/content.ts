@@ -16,49 +16,44 @@ export const AUDIENCE = [
   'Partner program leaders',
 ]
 
-/** Section 2: the practical problems a partner program runs into. */
+/** Why partner programs stall. Short on purpose: one line each. */
 export const CHALLENGES = [
   {
     title: "Partners don't know what to promote",
-    text: 'They signed up, but there is no clear message, offer or campaign for them to take to their customers.',
+    text: 'No clear message, offer or campaign to take to their customers.',
   },
   {
-    title: 'Campaigns are hard for partners to run',
-    text: 'Most partners have small marketing teams. If a campaign needs work from them, it waits.',
+    title: 'Campaigns need work partners cannot do',
+    text: 'Most partners have a small marketing team, or none at all.',
   },
   {
-    title: 'Engagement is uneven',
-    text: 'A few partners do most of the marketing. The rest stay quiet between quarterly calls.',
+    title: 'Assets sit unused in the portal',
+    text: 'Decks and templates get downloaded, rarely sent.',
   },
   {
-    title: 'Assets sit unused',
-    text: 'Decks, one-pagers and templates are in the portal. Few partners open them, fewer send them.',
-  },
-  {
-    title: 'Co-marketing has no single owner',
-    text: 'Requests, approvals and funds are spread across teams, so joint campaigns stall.',
-  },
-  {
-    title: 'Your team is stretched',
-    text: 'Partner marketing needs planning and hands-on execution. Most teams only have time for one.',
+    title: 'Nobody owns co-marketing',
+    text: 'Requests, approvals and funds bounce between teams.',
   },
 ]
 
-/** The flow behind the "where we fit" diagram, read top to bottom (or left to right). */
+/** The "where we fit" diagram, read top to bottom. */
 export const FLOW = [
-  { label: 'Technology Brand', note: 'Your product, goals and partner program', hub: false },
-  { label: 'Partner Champions', note: 'Plans the program and does the work', hub: true },
-  { label: 'Partner Network', note: 'Resellers, MSPs, alliances, tech partners', hub: false },
-  { label: 'Marketing Programs', note: 'Enablement, kits and co-marketing', hub: false },
-  { label: 'Campaigns', note: 'Co-branded, ABM, events, outreach', hub: false },
-  { label: 'Customer Engagement', note: 'Buyers reached through partners they trust', hub: false },
-  { label: 'Growth', note: 'Partner-sourced and influenced pipeline', hub: false },
-]
+  { label: 'Your brand', note: 'Product, goals and partner program', tone: 'base' },
+  { label: 'Partner Champions', note: 'Plans, builds and runs your partner marketing', tone: 'hub' },
+  { label: 'Your partners', note: 'Resellers, MSPs, SIs and alliances', tone: 'base' },
+  { label: 'Their customers', note: 'Reached through partners they already trust', tone: 'base' },
+  { label: 'Pipeline', note: 'Partner-sourced and partner-influenced', tone: 'end' },
+] as const
+
+/** What travels from Partner Champions to partners, shown on the hub connector. */
+export const FLOW_HANDOFF = ['Campaign kits', 'Co-branded assets', 'Events', 'Outreach']
+
+export type ServiceIcon = 'enable' | 'campaign' | 'abm' | 'event' | 'cobrand' | 'direct'
 
 export type Service = {
   num: string
+  icon: ServiceIcon
   title: string
-  /** What the buyer should understand this service is, in one line. */
   summary: string
   deliverables: string[]
 }
@@ -66,39 +61,45 @@ export type Service = {
 export const SERVICES: Service[] = [
   {
     num: '01',
+    icon: 'enable',
     title: 'Partner Enablement',
-    summary: 'Give partners the messaging, assets and tools they need to sell your product with confidence.',
-    deliverables: ['Partner playbooks', 'Messaging guides', 'Sales enablement materials', 'Partner-ready content'],
+    summary: 'Messaging, playbooks and sales kits partners can pick up and use.',
+    deliverables: ['Playbooks', 'Messaging guides', 'Sales kits'],
   },
   {
     num: '02',
+    icon: 'campaign',
     title: 'Partner Campaigns',
-    summary: 'Campaigns partners can join and launch without starting from scratch.',
-    deliverables: ['Campaign planning', 'Email programs', 'Campaign kits and assets', 'Follow-up workflows'],
+    summary: 'Ready-to-run campaigns partners launch without starting from scratch.',
+    deliverables: ['Campaign kits', 'Email programs', 'Follow-up'],
   },
   {
     num: '03',
+    icon: 'abm',
     title: 'Account-Based Marketing',
-    summary: 'Your sales team and your partners working the same priority accounts, with one message.',
-    deliverables: ['Target account selection', 'Account-specific messaging', 'Partner alignment', 'Coordinated outreach'],
+    summary: 'You and your partners working the same priority accounts.',
+    deliverables: ['Target accounts', 'Account messaging', 'Joint outreach'],
   },
   {
     num: '04',
+    icon: 'event',
     title: 'Webinars & Events',
-    summary: 'Events that educate buyers and give partners a reason to invite their customers.',
-    deliverables: ['Event strategy', 'Registration campaigns', 'Partner invitations', 'Post-event follow-up'],
+    summary: 'Joint events that give partners a reason to invite their customers.',
+    deliverables: ['Event plan', 'Registration', 'Follow-up'],
   },
   {
     num: '05',
+    icon: 'cobrand',
     title: 'Co-Marketing & Content',
-    summary: 'Campaigns and assets built with both brands on them, ready for partners to use.',
-    deliverables: ['Co-branded assets', 'Landing pages', 'Social campaigns', 'Joint email campaigns'],
+    summary: 'Campaigns and assets with both brands on them.',
+    deliverables: ['Co-branded assets', 'Landing pages', 'Social'],
   },
   {
     num: '06',
-    title: 'Direct Engagement Programs',
-    summary: 'Outreach to the specific partner or customer audiences you need to reach, run for you.',
-    deliverables: ['Targeted outreach', 'Email sequences', 'Partner engagement initiatives', 'Follow-up programs'],
+    icon: 'direct',
+    title: 'Direct Engagement',
+    summary: 'Outreach to the partner or customer audiences you need to reach.',
+    deliverables: ['Targeted outreach', 'Email sequences', 'Partner programs'],
   },
 ]
 
@@ -106,59 +107,35 @@ export const PROCESS = [
   {
     num: '01',
     title: 'Discover',
-    description: 'We learn your program: partners, goals, target accounts, and what has or has not worked so far.',
-    deliverables: ['Partner program review', 'Audience and account map', 'Quick-win shortlist'],
+    description: 'Review your program, partners and target accounts.',
+    deliverables: ['Program review', 'Account map', 'Quick wins'],
   },
   {
     num: '02',
     title: 'Strategize',
-    description: 'We turn what we learned into a focused plan with priorities, owners and a calendar.',
-    deliverables: ['Partner marketing plan', 'Messaging framework', 'Campaign calendar'],
+    description: 'Agree priorities, messaging and a campaign calendar.',
+    deliverables: ['Marketing plan', 'Messaging', 'Calendar'],
   },
   {
     num: '03',
     title: 'Activate',
-    description: 'We build and run the work: campaigns, partner kits, events and outreach.',
-    deliverables: ['Campaign assets and kits', 'Launched programs', 'Partner communications'],
+    description: 'Build and launch the campaigns, kits and events.',
+    deliverables: ['Assets and kits', 'Live campaigns', 'Partner comms'],
   },
   {
     num: '04',
     title: 'Optimize',
-    description: 'We review what partners used and what it produced, then adjust the next round.',
-    deliverables: ['Performance review', 'Partner feedback', 'Next-quarter plan'],
+    description: 'Review what partners used and what it produced.',
+    deliverables: ['Results review', 'Partner feedback', 'Next-quarter plan'],
   },
 ]
 
-/** Qualitative outcomes, written as a shift from today to where better partner marketing takes you. */
+/** Qualitative outcomes. No numbers. */
 export const OUTCOMES = [
-  {
-    title: 'Partner engagement',
-    from: 'A few partners carry most of the marketing',
-    to: 'More partners take part, campaign after campaign',
-  },
-  {
-    title: 'Campaign coordination',
-    from: 'Partners run disconnected one-off activity',
-    to: 'Campaigns planned together, on one calendar',
-  },
-  {
-    title: 'Asset utilization',
-    from: 'Content sits in the partner portal',
-    to: 'Kits partners actually open, co-brand and send',
-  },
-  {
-    title: 'Partner participation',
-    from: 'Partners wait to be told what to do',
-    to: 'Partners know the plan and their part in it',
-  },
-  {
-    title: 'Audience reach',
-    from: 'Your message stops at your own lists',
-    to: "Your message reaches your partners' customers",
-  },
-  {
-    title: 'Execution',
-    from: 'Plans that stall between teams',
-    to: 'Programs launched on schedule, with one owner',
-  },
+  { title: 'Partner engagement', text: 'More partners take part in each campaign.' },
+  { title: 'Coordinated campaigns', text: 'One plan and one calendar instead of one-off activity.' },
+  { title: 'Assets that get used', text: 'Kits partners open, co-brand and send.' },
+  { title: 'Partner participation', text: 'Partners know the plan and their part in it.' },
+  { title: 'Wider reach', text: "Your message reaches your partners' customers." },
+  { title: 'Consistent execution', text: 'Programs launch on schedule, with one owner.' },
 ]
