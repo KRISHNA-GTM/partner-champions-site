@@ -2,7 +2,6 @@ import { SCHEDULING_URL } from '../../config/site'
 import { hasScheduler, mailtoHref } from '../../utils/contact'
 import { Modal } from '../ui/Modal'
 import { ArrowUpRight, Calendar, Mail } from '../ui/Icons'
-import { CopyEmail } from './CopyEmail'
 import './ContactModal.css'
 
 type Props = { open: boolean; topic?: string; onClose: () => void }
@@ -62,10 +61,6 @@ export function ContactModal({ open, topic, onClose }: Props) {
           </span>
           <ArrowUpRight className="contact-option__arrow" />
         </a>
-      </div>
-
-      <div className="contact-modal__foot">
-        <CopyEmail />
       </div>
     </Modal>
   )
