@@ -7,7 +7,7 @@ Single-page marketing site for Partner Champions LLC. React 19 + TypeScript + Vi
 ```bash
 npm install
 npm run dev        # local dev server at http://localhost:5173
-npm run build      # production build into dist/
+npm run build      # production build into dist/ (copy dist/ into docs/ for GitHub Pages)
 npm run preview    # serve the production build at http://localhost:4173
 ```
 
@@ -27,7 +27,9 @@ Everything you are likely to change lives in two files.
 | `CONTACT_EMAIL` | Address used in all `mailto:` links and the copy button. |
 | `SOCIAL_LINKS` | Footer social links. Entries with an empty `href` are hidden. |
 
-`src/data/content.ts`: navigation, services, ecosystem diagram nodes, process stages, outcomes and the draft resource articles. Add an object to `RESOURCES` to add an article card; the preview dialog renders from the same data.
+`src/data/content.ts`: navigation, audience, challenges, the "where we fit" flow, services and deliverables, process stages and outcomes.
+
+`src/components/Showcase/Showcase.tsx`: the illustrative asset mockups in "Our Work" (landing page, email, webinar, LinkedIn post, campaign kit, ABM brief, playbook). Copy for the mockups lives in that file.
 
 `index.html`: page title, meta description and Open Graph tags. Update `og:url` / `og:image` if the domain is not `partnerchampions.com`.
 
@@ -42,14 +44,21 @@ src/
   utils/         mailto builder, CSS variable helper
   styles/        design tokens and base styles
   components/
-    Header/ Hero/ ValueProp/ Services/ Ecosystem/ Approach/
-    Impact/ Resources/ FinalCta/ Footer/
+    Header/ Hero/ Challenge/ Services/ Showcase/ Approach/
+    Outcomes/ FinalCta/ Footer/
     contact/     booking CTA, contact dialog, copy-email
-    ui/          modal, buttons, icons
+    ui/          section heading, modal, buttons, icons
 public/          favicon, apple-touch-icon, og-image
 ```
 
 ## Content notes
 
-- No client names, metrics, testimonials or company history appear on the page. The impact section is illustrative and carries no numbers.
-- The three resource articles are labelled "Draft concept" and open an outline preview with a request-by-email action. Replace with real articles when published.
+- No client names, metrics, testimonials or company history appear on the page. Outcomes are qualitative and carry no numbers.
+- The "Our Work" mockups are labelled on the page as illustrative examples, not client work. They use generic "Your Brand" and "Partner" marks only.
+- There is no Resources or Insights section. Add one when real articles exist.
+
+## Page structure
+
+Hero, The challenge (problems + where we fit), Services, Our work, How we work, Outcomes, Final CTA + footer.
+
+Spacing tokens live in `src/styles/tokens.css` (`--s-1` to `--s-9`, `--section-y`, `--section-y-tight`, `--section-y-loose`, `--head-gap`). Every section heading uses `SectionHeading` (`src/components/ui/SectionHeading.tsx`).
