@@ -27,18 +27,33 @@
   --font-display: 'Manrope Variable', 'Manrope', 'Segoe UI', system-ui, sans-serif;
   --font-body: 'Inter Variable', 'Inter', 'Segoe UI', system-ui, sans-serif;
 
-  --fs-hero: clamp(2.6rem, 1.15rem + 5.4vw, 6.1rem);
-  --fs-h2: clamp(2.05rem, 1.25rem + 3vw, 3.9rem);
+  --fs-hero: clamp(2.5rem, 1.2rem + 5vw, 5.5rem);
+  --fs-h2: clamp(2rem, 1.3rem + 2.6vw, 3.4rem);
   --fs-h3: clamp(1.3rem, 1.1rem + 0.7vw, 1.65rem);
   --fs-lead: clamp(1.06rem, 1rem + 0.35vw, 1.3rem);
   --fs-body: 1.0625rem;
   --fs-small: 0.9375rem;
   --fs-micro: 0.75rem;
 
-  /* Space */
+  /* Space: one scale, used everywhere */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
   --gutter: clamp(20px, 4vw, 48px);
-  --max: 1280px;
-  --section-y: clamp(88px, 11vw, 168px);
+  --max: 1200px;
+
+  /* Section rhythm: default, tight (dense or follow-on sections), loose (statement sections) */
+  --section-y: clamp(80px, 9vw, 128px);
+  --section-y-tight: clamp(64px, 7vw, 96px);
+  --section-y-loose: clamp(96px, 11vw, 160px);
+  /* Gap between a section heading and the content it introduces */
+  --head-gap: clamp(40px, 5vw, 64px);
 
   /* Shape and motion */
   --radius-s: 6px;
