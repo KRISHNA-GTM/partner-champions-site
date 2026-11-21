@@ -77,8 +77,8 @@ export function HeroNetwork() {
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
       const mobile = w < 720
       cx = mobile ? w * 0.6 : w * 0.77
-      cy = mobile ? h * 0.25 : h * 0.5
-      R = mobile ? Math.min(w * 0.56, 320) : Math.min(w * 0.4, h * 0.62, 560)
+      cy = mobile ? Math.min(h * 0.2, 210) : h * 0.5
+      R = mobile ? Math.min(w * 0.5, 300) : Math.min(w * 0.4, h * 0.62, 560)
     }
 
     const project = (orbit: number, angle: number, ox: number, oy: number) => {

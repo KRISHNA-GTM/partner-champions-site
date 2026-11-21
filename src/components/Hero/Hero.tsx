@@ -1,10 +1,10 @@
+import { AUDIENCE } from '../../data/content'
+import { mailtoHref } from '../../utils/contact'
 import { vars } from '../../utils/style'
 import { BookingCta } from '../contact/BookingCta'
-import { ArrowDown, ArrowRight } from '../ui/Icons'
+import { ArrowRight } from '../ui/Icons'
 import { HeroNetwork } from './HeroNetwork'
 import './Hero.css'
-
-const PILLARS = ['Strategy', 'Campaigns', 'Enablement', 'Partner Engagement']
 
 export function Hero() {
   return (
@@ -28,33 +28,26 @@ export function Hero() {
           </span>
         </h1>
         <p className="hero__lead hero__in" style={vars({ '--d': '380ms' })}>
-          We help technology companies turn partner ecosystems into growth engines through strategic marketing,
-          engagement, and demand generation.
+          We help technology brands turn partner programs into active growth channels, with campaigns, co-marketing,
+          enablement and demand generation that give partners a reason to engage and a way to sell.
         </p>
         <div className="hero__ctas hero__in" style={vars({ '--d': '480ms' })}>
           <BookingCta>
-            Let's Build Your Growth <ArrowRight />
+            Let's Talk About Your Partner Marketing <ArrowRight />
           </BookingCta>
-          <a href="#services" className="btn btn--ghost-dark">
-            Explore Our Services
+          <a href={mailtoHref()} className="btn btn--ghost-dark">
+            Email Us
           </a>
         </div>
       </div>
 
       <div className="container hero__strip hero__in" style={vars({ '--d': '700ms' })}>
-        <p className="visually-hidden">Strategy. Campaigns. Enablement. Partner Engagement.</p>
-        <ol aria-hidden="true">
-          {PILLARS.map((p, i) => (
-            <li key={p}>
-              <span>0{i + 1}</span>
-              {p}
-            </li>
+        <p className="hero__strip-label">Built for</p>
+        <ul>
+          {AUDIENCE.map((a) => (
+            <li key={a}>{a}</li>
           ))}
-        </ol>
-        <a href="#about" className="hero__scroll">
-          <span>Scroll</span>
-          <ArrowDown size={16} />
-        </a>
+        </ul>
       </div>
     </section>
   )
