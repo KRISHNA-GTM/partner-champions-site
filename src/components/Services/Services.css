@@ -1,171 +1,124 @@
 .services {
-  background: var(--paper);
+  background: var(--mist);
 }
 
 .services .section-title {
   max-width: 11em;
 }
 
-/* Open grid: each service sits under a rule, no card chrome */
+/* Six tiles; subgrid keeps titles, summaries and chips level across a row */
 .svc-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: clamp(24px, 4vw, 56px);
-  row-gap: 0;
+  gap: var(--s-5);
 }
 
-.svc:nth-child(n + 4) {
-  margin-top: var(--s-8);
-}
-
-/* Subgrid keeps titles, summaries and lists level across a row even when a title wraps */
 .svc {
   display: grid;
   grid-row: span 4;
   grid-template-rows: subgrid;
-  row-gap: var(--s-4);
-  padding-top: var(--s-5);
-  border-top: 2px solid var(--navy-700);
+  row-gap: var(--s-3);
+  padding: var(--s-6);
+  border-radius: var(--radius-m);
+  background: var(--paper);
+  box-shadow: 0 1px 0 var(--line);
+  transition:
+    transform 0.4s var(--ease-out),
+    box-shadow 0.4s var(--ease-out);
 }
 
-.svc article {
-  display: contents;
+.svc:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 40px -28px rgba(16, 44, 89, 0.35);
 }
 
-.svc__top {
+.svc__icon {
   display: grid;
-  gap: var(--s-2);
-}
-
-.svc__num {
-  font-size: var(--fs-micro);
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--s-2);
+  border-radius: 12px;
+  background: #eaf1ff;
   color: var(--royal);
 }
 
+.svc__icon svg {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .svc h3 {
-  font-size: var(--fs-h3);
-  line-height: 1.15;
-  letter-spacing: -0.025em;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: var(--navy-700);
 }
 
 .svc__summary {
-  color: var(--ink);
-  line-height: 1.55;
-  max-width: 28em;
-}
-
-.svc__label {
-  align-self: end;
-  margin-top: var(--s-2);
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--ink-soft);
+  font-size: var(--fs-small);
+  line-height: 1.55;
 }
 
-/* Deliverables read as a short manifest */
 .svc__list {
-  display: grid;
-  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-content: start;
+  gap: 6px;
+  padding-top: var(--s-2);
 }
 
 .svc__list li {
-  display: flex;
-  align-items: center;
-  gap: var(--s-3);
-  padding: 10px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: var(--fs-small);
-  font-weight: 500;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--mist);
   color: var(--navy-700);
+  font-size: 0.8125rem;
+  font-weight: 600;
 }
 
-.svc__list li::before {
-  content: '';
-  flex: none;
-  width: 6px;
-  height: 6px;
-  border-radius: 1px;
-  background: var(--royal);
-}
-
-.svc-cta {
+.svc-more {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--s-4) var(--s-6);
-  margin-top: var(--s-8);
-  padding: var(--s-6) var(--s-6);
-  border-radius: var(--radius-m);
-  background: var(--mist);
-}
-
-.svc-cta p {
+  justify-content: center;
+  gap: 4px 12px;
+  margin-top: var(--s-7);
   color: var(--ink-soft);
-}
-
-.svc-cta strong {
-  color: var(--navy-700);
 }
 
 @media (max-width: 960px) {
   .svc-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: var(--s-6);
-  }
-
-  .svc:nth-child(n + 3) {
-    margin-top: var(--s-7);
   }
 }
 
 @media (max-width: 640px) {
   .svc-grid {
     grid-template-columns: 1fr;
+    gap: var(--s-3);
   }
 
   .svc {
     grid-row: auto;
     grid-template-rows: none;
-  }
-
-  .svc:nth-child(n + 2) {
-    margin-top: var(--s-6);
-  }
-
-  /* Deliverables become compact chips so six services stay scannable on a phone */
-  .svc__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--s-2);
-    border-top: 0;
-  }
-
-  .svc__list li {
-    padding: 6px 12px;
-    border: 1px solid var(--line-strong);
-    border-radius: 999px;
-    font-size: 0.875rem;
-  }
-
-  .svc__list li::before {
-    display: none;
-  }
-
-  .svc__label {
-    display: none;
-  }
-
-  .svc-cta {
+    grid-template-columns: 48px minmax(0, 1fr);
+    column-gap: var(--s-4);
     padding: var(--s-5);
   }
 
-  .svc-cta .btn {
-    width: 100%;
+  .svc__icon {
+    grid-row: 1 / 4;
+    margin-bottom: 0;
+  }
+
+  .svc h3,
+  .svc__summary,
+  .svc__list {
+    grid-column: 2;
   }
 }
