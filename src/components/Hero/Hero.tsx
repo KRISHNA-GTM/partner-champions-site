@@ -1,5 +1,4 @@
 import { AUDIENCE } from '../../data/content'
-import { mailtoHref } from '../../utils/contact'
 import { vars } from '../../utils/style'
 import { BookingCta } from '../contact/BookingCta'
 import { CampaignKit } from '../Showcase/Showcase'
@@ -35,9 +34,6 @@ export function Hero() {
             <BookingCta>
               Let's Talk About Your Partner Marketing <ArrowRight />
             </BookingCta>
-            <a href={mailtoHref()} className="btn btn--ghost-dark">
-              Email Us
-            </a>
           </div>
         </div>
 

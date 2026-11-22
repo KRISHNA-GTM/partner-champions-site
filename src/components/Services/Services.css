@@ -81,15 +81,6 @@
   font-weight: 600;
 }
 
-.svc-more {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 4px 12px;
-  margin-top: var(--s-7);
-  color: var(--ink-soft);
-}
 
 @media (max-width: 960px) {
   .svc-grid {

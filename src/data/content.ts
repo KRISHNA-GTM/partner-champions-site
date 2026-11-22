@@ -132,10 +132,8 @@ export const PROCESS = [
 
 /** Qualitative outcomes. No numbers. */
 export const OUTCOMES = [
-  { title: 'Partner engagement', text: 'More partners take part in each campaign.' },
-  { title: 'Coordinated campaigns', text: 'One plan and one calendar instead of one-off activity.' },
-  { title: 'Assets that get used', text: 'Kits partners open, co-brand and send.' },
-  { title: 'Partner participation', text: 'Partners know the plan and their part in it.' },
-  { title: 'Wider reach', text: "Your message reaches your partners' customers." },
-  { title: 'Consistent execution', text: 'Programs launch on schedule, with one owner.' },
+  { title: 'More active partners', text: 'Partners have campaigns and materials they can put into motion.' },
+  { title: 'Coordinated campaigns', text: 'Partners, sales and marketing work from one plan and one calendar.' },
+  { title: 'Marketing that gets used', text: 'Kits partners open, co-brand and send.' },
+  { title: 'Consistent execution', text: 'Programs launch on schedule, with one owner and clear follow-through.' },
 ]

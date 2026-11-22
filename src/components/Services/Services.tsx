@@ -1,8 +1,6 @@
 import type { ReactNode } from 'react'
 import { SERVICES, type ServiceIcon } from '../../data/content'
 import { vars } from '../../utils/style'
-import { BookingCta } from '../contact/BookingCta'
-import { ArrowRight } from '../ui/Icons'
 import { SectionHeading } from '../ui/SectionHeading'
 import './Services.css'
 
@@ -66,7 +64,7 @@ export function Services() {
               Six services. <span className="hl">Real deliverables.</span>
             </>
           }
-          lead="Each one is work we plan and produce for you. Take one, or combine them into a full program."
+          lead="From a single campaign to an ongoing partner marketing program, we bring the strategy, creative and execution together."
         />
 
         <ul className="svc-grid">
@@ -87,13 +85,6 @@ export function Services() {
             </li>
           ))}
         </ul>
-
-        <p className="svc-more reveal">
-          Not sure which you need?{' '}
-          <BookingCta className="text-link">
-            <span>Explore how we can help</span> <ArrowRight size={16} />
-          </BookingCta>
-        </p>
       </div>
     </section>
   )

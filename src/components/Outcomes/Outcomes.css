@@ -80,10 +80,10 @@
   color: var(--royal);
 }
 
-/* Outcomes: six short statements on a 3-column grid */
+/* Outcomes: four short statements on a 4-column grid */
 .outcome-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--s-6) clamp(24px, 4vw, 56px);
 }
 

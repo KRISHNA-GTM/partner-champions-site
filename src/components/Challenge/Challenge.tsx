@@ -12,6 +12,7 @@ export function Challenge() {
             <h2 id="challenge-title" className="section-title">
               You have partners. Getting them to market with you is the <span className="hl">hard part.</span>
             </h2>
+            <p className="lead">Most partner programs don't lack partners or assets. They lack execution.</p>
           </header>
 
           <ol className="problems">

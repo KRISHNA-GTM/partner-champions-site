@@ -89,7 +89,7 @@ export function Outcomes() {
 
         <ul className="outcome-grid">
           {OUTCOMES.map((o, i) => (
-            <li key={o.title} className="outcome reveal" style={vars({ '--delay': `${(i % 3) * 70}ms` })}>
+            <li key={o.title} className="outcome reveal" style={vars({ '--delay': `${(i % 4) * 70}ms` })}>
               <h3>{o.title}</h3>
               <p>{o.text}</p>
             </li>

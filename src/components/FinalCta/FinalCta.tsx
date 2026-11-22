@@ -32,9 +32,6 @@ export function FinalCta() {
           <BookingCta className="btn btn--primary final__btn">
             Let's Talk About Your Partner Marketing <ArrowRight />
           </BookingCta>
-          <a href={mailtoHref()} className="btn btn--ghost-dark final__btn">
-            Email Us
-          </a>
         </div>
         <p className="final__email reveal">
           Or write to <a href={mailtoHref()}>{CONTACT_EMAIL}</a>
