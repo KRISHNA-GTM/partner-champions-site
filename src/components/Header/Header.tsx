@@ -4,7 +4,7 @@ import logoWhite from '../../assets/logo-white.png'
 import { NAV_ITEMS } from '../../data/content'
 import { useScrollSpy } from '../../hooks/usePageEffects'
 import { BookingCta } from '../contact/BookingCta'
-import { CONTACT_EMAIL } from '../../config/site'
+import { CONTACT_EMAIL, DOMINANT_CTA, SHORT_CTA } from '../../config/site'
 import { mailtoHref } from '../../utils/contact'
 import { ArrowRight } from '../ui/Icons'
 import './Header.css'
@@ -94,8 +94,8 @@ export function Header() {
 
         <div className="site-header__actions">
           <BookingCta className="btn btn--primary btn--small site-header__cta">
-            <span className="site-header__cta-full">Book a Partner Marketing Consultation</span>
-            <span className="site-header__cta-short">Book Consultation</span>
+            <span className="site-header__cta-full">{SHORT_CTA}</span>
+            <span className="site-header__cta-short">{SHORT_CTA}</span>
           </BookingCta>
           <button
             ref={toggleRef}
@@ -128,7 +128,7 @@ export function Header() {
         </nav>
         <div className="mobile-menu__foot">
           <BookingCta className="btn btn--primary">
-            Book a Partner Marketing Consultation <ArrowRight />
+            {DOMINANT_CTA} <ArrowRight />
           </BookingCta>
           <a href={mailtoHref()} className="mobile-menu__email">
             {CONTACT_EMAIL}

@@ -1,5 +1,5 @@
 import logoWhite from '../../assets/logo-white.png'
-import { COMPANY_NAME, CONTACT_EMAIL, SOCIAL_LINKS, TAGLINE } from '../../config/site'
+import { COMPANY_NAME, CONTACT_EMAIL, DOMINANT_CTA, SOCIAL_LINKS } from '../../config/site'
 import { NAV_ITEMS } from '../../data/content'
 import { BookingCta } from '../contact/BookingCta'
 import { mailtoHref } from '../../utils/contact'
@@ -8,60 +8,54 @@ import './Footer.css'
 
 const CURRENT_YEAR = new Date().getFullYear()
 
+/** The page ending: closing call to action and footer in one block. */
 export function Footer() {
   const socials = SOCIAL_LINKS.filter((s) => s.href.trim())
 
   return (
-    <footer className="footer on-dark">
+    <footer id="contact" className="footer on-dark" aria-labelledby="closing-title">
       <div className="container">
-        <div className="footer__top">
-          <div className="footer__brand">
-            <a href="#top" aria-label="Partner Champions, back to top">
-              <img src={logoWhite} alt="Partner Champions LLC" width={751} height={204} className="footer__logo" />
-            </a>
-            <p className="footer__tagline">{TAGLINE}</p>
+        <div className="footer__cta">
+          <h2 id="closing-title" className="footer__title">Your next partner campaign starts here.</h2>
+          <div className="footer__cta-side">
+            <p>
+              Tell us which partners and which offer. We’ll help you shape the campaign, build it, and get it into your
+              partners’ hands.
+            </p>
+            <div className="footer__actions">
+              <BookingCta>
+                {DOMINANT_CTA} <ArrowRight />
+              </BookingCta>
+              <a href={mailtoHref()} className="footer__email">
+                {CONTACT_EMAIL}
+              </a>
+            </div>
           </div>
+        </div>
 
-          <nav className="footer__col" aria-label="Footer">
-            <p className="footer__heading">Explore</p>
-            <ul>
+        <div className="footer__bottom">
+          <a href="#top" className="footer__brand" aria-label="Partner Champions, back to top">
+            <img src={logoWhite} alt="Partner Champions LLC" width={751} height={204} className="footer__logo" />
+          </a>
+          <nav aria-label="Footer">
+            <ul className="footer__nav">
               {NAV_ITEMS.filter((n) => n.id !== 'contact').map((n) => (
                 <li key={n.id}>
                   <a href={`#${n.id}`}>{n.label}</a>
                 </li>
               ))}
+              {socials.map((s) => (
+                <li key={s.label}>
+                  <a href={s.href} target="_blank" rel="noopener noreferrer">
+                    {s.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </nav>
-
-          <div className="footer__col">
-            <p className="footer__heading">Contact</p>
-            <a href={mailtoHref()} className="footer__email">
-              {CONTACT_EMAIL}
-            </a>
-            <BookingCta className="text-link footer__talk">
-              <span>Book a consultation</span> <ArrowRight size={16} />
-            </BookingCta>
-            {socials.length > 0 && (
-              <ul className="footer__social">
-                {socials.map((s) => (
-                  <li key={s.label}>
-                    <a href={s.href} target="_blank" rel="noopener noreferrer">
-                      {s.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </div>
-
-        <div className="footer__bottom">
-          <p>
-            © {CURRENT_YEAR} {COMPANY_NAME}. All rights reserved.
+          <p className="footer__legal">
+            © {CURRENT_YEAR} {COMPANY_NAME}
           </p>
-          <a href="#top" className="footer__top-link">
-            Back to top
-          </a>
         </div>
       </div>
     </footer>

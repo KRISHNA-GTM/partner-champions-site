@@ -148,18 +148,16 @@ button {
   padding-bottom: 0.35em;
 }
 
-/* Eyebrow: tracked caps label above a section title */
+/* Eyebrow: small sentence-case label, used only where it adds context */
 .eyebrow {
   display: flex;
   align-items: center;
   gap: var(--s-3);
   margin: 0;
   font-family: var(--font-body);
-  font-size: var(--fs-micro);
+  font-size: var(--fs-small);
   font-weight: 600;
-  line-height: 1;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  line-height: 1.2;
   color: var(--royal);
 }
 

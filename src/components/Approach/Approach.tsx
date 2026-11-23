@@ -1,34 +1,38 @@
 import { PROCESS } from '../../data/content'
-import { vars } from '../../utils/style'
 import { SectionHeading } from '../ui/SectionHeading'
 import './Approach.css'
 
 export function Approach() {
   return (
     <section id="approach" className="approach section" aria-labelledby="approach-title">
-      <div className="container">
+      <div className="container approach__inner">
         <SectionHeading
           id="approach-title"
-          eyebrow="Our approach"
-          title={<>From plan <span className="hl">to partner launch.</span></>}
-          lead="Four steps. One execution team."
+          title="How a campaign gets done."
+          lead="You set the priorities and approve the work. We handle everything in between."
         />
 
-        <ol className="process">
-          {PROCESS.map((p, i) => (
-            <li key={p.num} className="process__step reveal" style={vars({ '--delay': `${i * 90}ms` })}>
-              <div className="process__rail" aria-hidden="true">
-                <span className="process__dot">{p.num}</span>
-              </div>
-              <div className="process__body">
-                <p className="process__label">{p.verb}</p>
-                <h3>{p.title}</h3>
-                <p>{p.description}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
-
+        <table className="steps">
+          <thead>
+            <tr>
+              <th scope="col">Stage</th>
+              <th scope="col">What happens</th>
+              <th scope="col">What you get</th>
+            </tr>
+          </thead>
+          <tbody>
+            {PROCESS.map((p, i) => (
+              <tr key={p.title}>
+                <th scope="row">
+                  <span aria-hidden="true">{i + 1}</span>
+                  {p.title}
+                </th>
+                <td>{p.what}</td>
+                <td className="steps__get">{p.get}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </section>
   )

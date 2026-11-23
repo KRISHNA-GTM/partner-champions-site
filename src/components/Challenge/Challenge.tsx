@@ -1,61 +1,44 @@
-import { PROBLEM_DIAGNOSIS, SOLUTION_BRIDGE } from '../../data/content'
-import { vars } from '../../utils/style'
+import { ENGINE, GAP } from '../../data/content'
 import { SectionHeading } from '../ui/SectionHeading'
 import './Challenge.css'
 
 export function Challenge() {
   return (
-    <section id="challenge" className="challenge section" aria-labelledby="challenge-title">
+    <section id="challenge" className="gap section" aria-labelledby="gap-title">
       <div className="container">
-        <div className="challenge__intro">
-          <SectionHeading
-            id="challenge-title"
-            eyebrow={PROBLEM_DIAGNOSIS.eyebrow}
-            title={
-              <>
-                Your partners signed up. <span className="hl">So why aren’t they marketing?</span>
-              </>
-            }
-          />
-          <div className="challenge__context reveal">
-            <p className="challenge__situation">{PROBLEM_DIAGNOSIS.situation}</p>
-            <p>{PROBLEM_DIAGNOSIS.detail}</p>
-          </div>
-        </div>
+        <SectionHeading id="gap-title" title={GAP.headline} lead={GAP.lead} layout="split" />
 
-        <ol className="problems" aria-label="Common partner marketing bottlenecks">
-          {PROBLEM_DIAGNOSIS.points.map((point, i) => (
-            <li key={point.num} className="problem reveal" style={vars({ '--delay': `${i * 70}ms` })}>
-              <span className="problem__num" aria-hidden="true">{point.num}</span>
-              <div>
-                <h3>{point.title}</h3>
-                <p>{point.text}</p>
-              </div>
+        <ul className="gap__points" aria-label="Where partner marketing breaks down">
+          {GAP.points.map((p) => (
+            <li key={p.title}>
+              <h3>{p.title}</h3>
+              <p>{p.text}</p>
             </li>
           ))}
-        </ol>
+        </ul>
 
-        <div className="bridge reveal" aria-labelledby="bridge-title">
-          <div className="bridge__head">
-            <p className="eyebrow">{SOLUTION_BRIDGE.eyebrow}</p>
-            <h3 id="bridge-title">{SOLUTION_BRIDGE.headline}</h3>
-            <p>{SOLUTION_BRIDGE.sub}</p>
-          </div>
-          <ol className="flow" aria-label="How partner marketing execution works">
-            {SOLUTION_BRIDGE.flow.map((step) => (
-              <li key={step.step} className={`flow__step flow__step--${step.type}`}>
-                <span className="flow__num">{step.step}</span>
-                <strong>{step.role}</strong>
-                <b>{step.focus}</b>
-                <span>{step.detail}</span>
-                {'handoffs' in step && (
-                  <ul className="flow__handoff" aria-label="Campaign work handled by Partner Champions">
-                    {(step.handoffs ?? []).map((handoff) => <li key={handoff}>{handoff}</li>)}
+        <div className="engine on-dark" aria-labelledby="engine-title">
+          <h3 id="engine-title" className="engine__title">{ENGINE.headline}</h3>
+
+          <ol className="engine__flow">
+            {ENGINE.nodes.map((n) => (
+              <li key={n.key} className={`engine__node engine__node--${n.key}`}>
+                <span className="engine__mark" aria-hidden="true" />
+                <strong>{n.role}</strong>
+                <p>{n.text}</p>
+                {n.chips && (
+                  <ul className="engine__chips" aria-label="What Partner Champions handles">
+                    {n.chips.map((c) => <li key={c}>{c}</li>)}
                   </ul>
                 )}
               </li>
             ))}
           </ol>
+
+          <p className="engine__outcome">
+            <span>The result</span>
+            {ENGINE.outcome}
+          </p>
         </div>
       </div>
     </section>

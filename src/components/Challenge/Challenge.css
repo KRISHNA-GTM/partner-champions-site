@@ -1,246 +1,215 @@
-.challenge {
-  padding-block: var(--section-y);
-  background: #f7f8fa;
+.gap {
+  background: var(--mist);
 }
 
-.challenge__intro {
+.gap .section-title {
+  max-width: 13em;
+}
+
+/* Four failure points: one quiet strip, read left to right */
+.gap__points {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
-  align-items: end;
-  gap: clamp(36px, 7vw, 96px);
-  margin-bottom: clamp(28px, 3.5vw, 44px);
-}
-
-.challenge .section-head {
-  margin: 0;
-}
-
-.challenge .section-title {
-  max-width: 12em;
-  font-size: clamp(2.5rem, 1.6rem + 3vw, 4.35rem);
-}
-
-.challenge__context {
-  display: grid;
-  gap: 14px;
-  padding-bottom: 6px;
-  color: var(--ink-soft);
-  font-size: 1rem;
-}
-
-.challenge__situation {
-  color: var(--navy-700);
-  font-family: var(--font-display);
-  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.45rem);
-  font-weight: 700;
-  line-height: 1.35;
-  letter-spacing: -0.025em;
-}
-
-.problems {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--line-strong);
 }
 
-.problem {
-  display: grid;
-  grid-template-columns: 46px minmax(0, 1fr);
-  gap: 16px;
-  padding: 24px 30px 26px 0;
-  border-bottom: 1px solid var(--line);
+.gap__points li {
+  padding: 22px 24px 26px 0;
 }
 
-.problem:nth-child(odd) {
-  margin-right: 32px;
-}
-
-.problem:nth-child(even) {
-  padding-left: 30px;
+.gap__points li + li {
+  padding-left: 24px;
   border-left: 1px solid var(--line);
 }
 
-.problem__num {
-  padding-top: 2px;
-  color: var(--royal);
-  font-family: var(--font-display);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-}
-
-.problem h3 {
-  margin-bottom: 7px;
-  color: var(--navy-700);
-  font-size: 1.08rem;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
-}
-
-.problem p {
-  color: var(--ink-soft);
-  font-size: 0.9rem;
-  line-height: 1.55;
-}
-
-.bridge {
-  position: relative;
-  margin-top: clamp(40px, 5vw, 64px);
-  padding: clamp(32px, 5vw, 64px);
-  border-radius: 4px;
-  background:
-    radial-gradient(60% 100% at 100% 0%, rgba(40, 120, 255, 0.24), transparent 70%),
-    var(--navy-950);
-  color: #fff;
-  overflow: hidden;
-}
-
-.bridge__head {
-  display: grid;
-  justify-items: start;
-  gap: 14px;
-  max-width: 750px;
-  margin-bottom: clamp(34px, 4vw, 52px);
-}
-
-.bridge__head h3 {
-  font-size: clamp(1.8rem, 1.2rem + 1.8vw, 2.75rem);
-  line-height: 1.08;
-  letter-spacing: -0.04em;
-}
-
-.bridge__head > p:last-child {
-  max-width: 40em;
-  color: #b9c7dc;
-  font-size: 1.02rem;
-}
-
-.flow {
-  display: grid;
-  grid-template-columns: 0.85fr 1.5fr 0.9fr 0.85fr;
-  gap: 22px;
-  align-items: stretch;
-}
-
-.flow__step {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 7px;
-  min-width: 0;
-  padding: 20px 18px;
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
-}
-
-.flow__step:not(:last-child)::after {
-  content: '→';
-  position: absolute;
-  top: 16px;
-  right: -18px;
-  color: var(--gold-soft);
-  font-size: 1.2rem;
-}
-
-.flow__num {
+.gap__points h3 {
   margin-bottom: 8px;
-  color: var(--sky);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-}
-
-.flow__step strong {
-  font-family: var(--font-display);
-  font-size: 1.08rem;
+  color: var(--navy-700);
+  font-size: 1.06rem;
+  letter-spacing: -0.02em;
   line-height: 1.25;
 }
 
-.flow__step > b {
-  color: var(--gold-soft);
-  font-size: 0.74rem;
-  font-weight: 650;
+.gap__points p {
+  color: var(--ink-soft);
+  font-size: var(--fs-small);
+  line-height: 1.55;
 }
 
-.flow__step > span:last-of-type {
-  color: #b9c7dc;
-  font-size: 0.83rem;
+/* The answer, attached directly under the problem */
+.engine {
+  margin-top: 8px;
+  padding: clamp(32px, 5vw, 64px);
+  border-radius: var(--radius-l);
+  background:
+    radial-gradient(60% 90% at 50% 0%, rgba(21, 94, 239, 0.28), transparent 70%),
+    var(--navy-900);
+  color: #fff;
+}
+
+.engine__title {
+  max-width: 14em;
+  margin-bottom: clamp(28px, 4vw, 48px);
+  font-size: var(--fs-h2);
+  line-height: 1.04;
+}
+
+.engine__flow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+}
+
+.engine__node {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 26px;
+  border-radius: var(--radius-m);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: inset 0 0 0 1px var(--line-dark);
+}
+
+/* arrow into the next node */
+.engine__node + .engine__node::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: calc(100% + clamp(8px, 1.2vw, 18px));
+  width: clamp(12px, 1.6vw, 20px);
+  height: clamp(12px, 1.6vw, 20px);
+  border-top: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.engine__node strong {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.engine__node p {
+  color: var(--on-dark-soft);
   line-height: 1.5;
 }
 
-.flow__step--engine {
-  padding-inline: 22px;
-  border-color: var(--electric);
-  background: rgba(40, 120, 255, 0.13);
+.engine__mark {
+  width: 22px;
+  height: 22px;
+  margin-bottom: 6px;
 }
 
-.flow__handoff {
+.engine__node--brand .engine__mark {
+  border-radius: 5px;
+  background: linear-gradient(135deg, #3a5c9a 50%, var(--royal) 50%);
+}
+
+.engine__node--partner .engine__mark {
+  border: 4px solid var(--gold);
+  border-radius: 50%;
+}
+
+.engine__node--engine {
+  padding: 30px;
+  background: var(--royal);
+  box-shadow: 0 24px 60px -20px rgba(21, 94, 239, 0.7);
+}
+
+.engine__node--engine .engine__mark {
+  display: none;
+}
+
+.engine__node--engine strong {
+  font-size: 1.6rem;
+}
+
+.engine__node--engine p {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 1.06rem;
+}
+
+.engine__chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   margin-top: 8px;
 }
 
-.flow__handoff li {
-  padding: 4px 8px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  color: #e5efff;
-  font-size: 0.7rem;
+.engine__chips li {
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.engine__outcome {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
+  margin-top: clamp(28px, 4vw, 44px);
+  padding-top: 24px;
+  border-top: 1px solid var(--line-dark);
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1rem + 0.6vw, 1.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
   line-height: 1.3;
 }
 
-.flow__step--end {
-  border-color: rgba(213, 166, 43, 0.65);
+.engine__outcome span {
+  color: var(--gold-soft);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: 0;
 }
 
-@media (max-width: 900px) {
-  .flow {
+@media (max-width: 960px) {
+  .gap__points {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px 22px;
   }
 
-  .flow__step:nth-child(2)::after {
-    display: none;
+  .gap__points li:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
   }
-}
 
-@media (max-width: 760px) {
-  .challenge__intro {
+  .gap__points li:nth-child(n + 3) {
+    border-top: 1px solid var(--line);
+  }
+
+  .engine__flow {
     grid-template-columns: 1fr;
-    gap: 22px;
+    gap: 40px;
   }
 
-  .challenge__context {
-    max-width: 38em;
+  .engine__node + .engine__node::before {
+    top: auto;
+    right: auto;
+    bottom: calc(100% + 12px);
+    left: 30px;
+    transform: rotate(135deg);
   }
 }
 
 @media (max-width: 560px) {
-  .problems {
+  .gap__points {
     grid-template-columns: 1fr;
   }
 
-  .problem,
-  .problem:nth-child(odd),
-  .problem:nth-child(even) {
-    margin: 0;
-    padding: 20px 0;
+  .gap__points li,
+  .gap__points li + li {
+    padding: 18px 0;
     border-left: 0;
   }
 
-  .flow {
-    grid-template-columns: 1fr;
-    gap: 2px;
-  }
-
-  .flow__step:not(:last-child)::after {
-    top: auto;
-    right: 20px;
-    bottom: -4px;
-    transform: rotate(90deg);
-  }
-
-  .flow__step:nth-child(2)::after {
-    display: block;
+  .gap__points li + li {
+    border-top: 1px solid var(--line);
   }
 }
