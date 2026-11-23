@@ -3,128 +3,115 @@
 }
 
 .outcomes .section-title {
-  max-width: 13em;
+  max-width: 17em;
 }
 
-/* Scattered strokes on the left, steady lanes on the right */
-.converge {
-  margin-bottom: var(--s-7);
-  padding: var(--s-6) var(--s-6) var(--s-5);
-  border-radius: var(--radius-l);
-  background: var(--paper);
-}
-
-.converge__svg {
-  width: 100%;
-  height: auto;
-}
-
-.converge__bit {
-  stroke: #9fb3d6;
-  stroke-width: 3;
-  stroke-linecap: round;
-}
-
-.converge__bit:nth-child(5n) {
-  stroke: var(--royal);
-  opacity: 0.55;
-}
-
-.converge__divider {
-  stroke: var(--line-strong);
-  stroke-dasharray: 3 6;
-}
-
-.converge__lane line {
-  stroke: url(#lane-grad);
-  stroke-width: 2;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  transition: stroke-dashoffset 1.4s var(--ease-out);
-  transition-delay: calc(var(--i) * 120ms);
-}
-
-.converge__inner.is-on .converge__lane line {
-  stroke-dashoffset: 0;
-}
-
-.converge__lane rect {
-  fill: var(--royal);
-}
-
-.converge__lane rect.is-gold {
-  fill: var(--gold);
-}
-
-.converge__lane path {
-  fill: none;
-  stroke: var(--royal);
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.converge__labels {
+/* Before and after, side by side */
+.shift {
   display: grid;
-  grid-template-columns: 520fr 680fr;
-  margin-top: var(--s-4);
+  grid-template-columns: minmax(0, 1fr) 64px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-5);
+}
+
+.shift__col {
+  display: grid;
+  gap: var(--s-4);
+  padding: clamp(28px, 4vw, 44px);
+  border-radius: var(--radius-l);
+}
+
+.shift__col--before {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-apple-sm);
+}
+
+.shift__col--after {
+  background:
+    radial-gradient(70% 90% at 90% 10%, rgba(21, 94, 239, 0.25), transparent 70%),
+    var(--navy-900);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 60px -20px rgba(9, 24, 47, 0.5);
+}
+
+.shift__tag {
   font-size: var(--fs-micro);
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--ink-soft);
 }
 
-.converge__labels span:last-child {
-  padding-left: calc(40 / 680 * 100%);
-  color: var(--royal);
+.shift__col--after .shift__tag {
+  color: var(--gold);
 }
 
-/* Outcomes: four short statements on a 4-column grid */
-.outcome-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--s-6) clamp(24px, 4vw, 56px);
-}
-
-.outcome {
-  display: grid;
-  gap: var(--s-2);
-  padding-top: var(--s-4);
-  border-top: 2px solid var(--royal);
-}
-
-.outcome h3 {
-  font-size: 1.125rem;
-  letter-spacing: -0.02em;
+.shift__col h3 {
+  font-size: var(--fs-h3);
+  letter-spacing: -0.025em;
   color: var(--navy-700);
 }
 
-.outcome p {
-  color: var(--ink-soft);
-  font-size: var(--fs-small);
+.shift__col--after h3 {
+  color: #fff;
 }
 
-@media (max-width: 860px) {
-  .outcome-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.shift__col ul {
+  display: grid;
+  gap: var(--s-3);
+}
+
+.shift__col li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 1.0625rem;
+  font-weight: 500;
+}
+
+.shift__col--before li {
+  color: var(--ink-soft);
+}
+
+/* Before: a muted cross. After: a check. */
+.shift__col li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.35em;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+
+.shift__col--before li::before {
+  background:
+    linear-gradient(45deg, transparent 45%, #9fb3d6 45%, #9fb3d6 55%, transparent 55%),
+    linear-gradient(-45deg, transparent 45%, #9fb3d6 45%, #9fb3d6 55%, transparent 55%);
+}
+
+.shift__col--after li::before {
+  background:
+    linear-gradient(-45deg, transparent 38%, var(--navy-700) 38%, var(--navy-700) 50%, transparent 50%) 7px 3px / 5px 9px no-repeat,
+    var(--gold);
+}
+
+.shift__arrow svg {
+  margin-inline: auto;
+  fill: none;
+  stroke: var(--royal);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 @media (max-width: 760px) {
-  .converge {
-    padding: var(--s-4);
-  }
-
-  .converge__labels {
-    font-size: 0.625rem;
-    letter-spacing: 0.12em;
-  }
-}
-
-@media (max-width: 520px) {
-  .outcome-grid {
+  .shift {
     grid-template-columns: 1fr;
-    gap: var(--s-5);
+  }
+
+  .shift__arrow {
+    transform: rotate(90deg);
   }
 }

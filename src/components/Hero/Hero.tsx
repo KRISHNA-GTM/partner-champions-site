@@ -8,50 +8,45 @@ import './Hero.css'
 export function Hero() {
   return (
     <section id="top" className="hero on-dark" aria-labelledby="hero-title">
-      <div className="hero__grid" aria-hidden="true" />
-
+      <div className="hero__field" aria-hidden="true" />
       <div className="container hero__inner">
         <div className="hero__copy">
-          <p className="eyebrow hero__in" style={vars({ '--d': '0ms' })}>
-            Partner Marketing Services
+          <p className="hero__eyebrow hero__in" style={vars({ '--d': '0ms' })}>
+            <span /> Partner marketing execution
           </p>
-          <h1 id="hero-title" className="hero__title">
-            <span className="hero__line hero__in" style={vars({ '--d': '80ms' })}>
-              Partner marketing
-            </span>{' '}
-            <span className="hero__line hero__in" style={vars({ '--d': '160ms' })}>
-              that drives <span className="hero__accent">revenue</span>,
-            </span>{' '}
-            <span className="hero__line hero__dim hero__in" style={vars({ '--d': '240ms' })}>
-              not just activity.
-            </span>
+          <h1 id="hero-title" className="hero__title hero__in" style={vars({ '--d': '70ms' })}>
+            Partners don’t market on their own.
           </h1>
-          <p className="hero__lead hero__in" style={vars({ '--d': '380ms' })}>
-            Partner Champions is the partner marketing team for technology brands. We plan, build and run the campaigns
-            your partners use to sell.
+          <p className="hero__lead hero__in" style={vars({ '--d': '150ms' })}>
+            We execute the campaigns that turn partner activity into revenue. From the offer and co-branded assets to partner outreach and follow-up, we make the work happen.
           </p>
-          <div className="hero__ctas hero__in" style={vars({ '--d': '480ms' })}>
+          <div className="hero__actions hero__in" style={vars({ '--d': '230ms' })}>
             <BookingCta>
-              Let's Talk About Your Partner Marketing <ArrowRight />
+              Book a Partner Marketing Consultation <ArrowRight />
             </BookingCta>
+            <a href="#services" className="hero__text-link">Explore our services <span aria-hidden="true">↘</span></a>
           </div>
         </div>
 
-        {/* What partners receive from us: a ready-to-launch campaign kit. Desktop only. */}
-        <figure className="hero__visual hero__in" style={vars({ '--d': '420ms' })} aria-label="Example partner campaign">
-          <div className="hv hv--kit" aria-hidden="true">
+        <figure className="hero__visual hero__in" style={vars({ '--d': '180ms' })} aria-label="Example partner campaign execution pack">
+          <div className="hero__visual-top">
+            <span>Campaign in motion</span>
+            <span className="hero__visual-count">01 / 05</span>
+          </div>
+          <div className="hero__campaign">
             <CampaignKit />
           </div>
-          <figcaption className="hero__visual-cap">What a partner receives from us. Illustrative example.</figcaption>
+          <figcaption>
+            <span className="hero__caption-mark" aria-hidden="true">↗</span>
+            One coordinated campaign, ready for partners to take to market.
+          </figcaption>
         </figure>
       </div>
 
-      <div className="container hero__strip hero__in" style={vars({ '--d': '700ms' })}>
-        <p className="hero__strip-label">Built for</p>
+      <div className="container hero__audience hero__in" style={vars({ '--d': '300ms' })}>
+        <span>For</span>
         <ul>
-          {AUDIENCE.map((a) => (
-            <li key={a}>{a}</li>
-          ))}
+          {AUDIENCE.map((audience) => <li key={audience}>{audience}</li>)}
         </ul>
       </div>
     </section>

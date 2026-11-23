@@ -3,7 +3,7 @@
 }
 
 .approach .section-title {
-  max-width: 12em;
+  max-width: 14em;
 }
 
 /* Desktop: four columns on one rail. The rail line runs through the numbered dots. */
@@ -71,43 +71,18 @@
 
 .process__body > p:not(.process__label) {
   color: var(--ink-soft);
-  font-size: var(--fs-small);
+  font-size: 1rem;
   line-height: 1.6;
 }
 
 .process__label {
-  margin-top: var(--s-2);
-  font-size: 0.6875rem;
+  margin-bottom: -4px;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gold);
 }
-
-.process__body ul {
-  display: grid;
-  gap: var(--s-2);
-}
-
-.process__body li {
-  position: relative;
-  padding-left: var(--s-4);
-  font-size: var(--fs-small);
-  font-weight: 500;
-  color: var(--navy-700);
-}
-
-.process__body li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.62em;
-  width: 6px;
-  height: 2px;
-  background: var(--royal);
-}
-
-
 
 /* Tablet and phone: vertical timeline */
 @media (max-width: 900px) {

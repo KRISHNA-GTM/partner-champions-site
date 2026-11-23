@@ -7,10 +7,10 @@ import './ContactModal.css'
 type Props = { open: boolean; topic?: string; onClose: () => void }
 
 export function ContactModal({ open, topic, onClose }: Props) {
-  const subject = topic ? `${topic}: partner marketing inquiry` : 'Partner marketing conversation'
+  const subject = topic ? `${topic}: Partner marketing consultation inquiry` : 'Partner marketing consultation request'
   const body = topic
-    ? `Hi Partner Champions team,\n\nI'd like to talk about ${topic.toLowerCase()} for our partner program.\n\nCompany:\nPartner program focus:\n`
-    : `Hi Partner Champions team,\n\nI'd like to talk about our partner marketing.\n\nCompany:\nPartner program focus:\n`
+    ? `Hi Partner Champions team,\n\nI'd like to schedule a partner marketing consultation regarding ${topic.toLowerCase()}.\n\nCompany:\nPartner program focus:\n`
+    : `Hi Partner Champions team,\n\nI'd like to schedule a partner marketing consultation.\n\nCompany:\nPartner program focus:\n`
 
   return (
     <Modal open={open} onClose={onClose} labelledBy="contact-title" className="contact-modal">
@@ -32,9 +32,9 @@ export function ContactModal({ open, topic, onClose }: Props) {
             fill="none"
           />
         </svg>
-        <p className="eyebrow">{topic ? topic : 'Start a conversation'}</p>
-        <h2 id="contact-title">Tell us where your partner program stands.</h2>
-        <p>Share your goals and your partner mix, and we'll talk through where marketing can help most.</p>
+        <p className="eyebrow">{topic ? topic : 'Partner Marketing Consultation'}</p>
+        <h2 id="contact-title">Let's talk through your partner marketing execution.</h2>
+        <p>Share where your partner program stands today, and we'll discuss turn-key campaigns to turn your partner relationships into pipeline.</p>
       </div>
 
       <div className="contact-modal__options">
@@ -44,8 +44,8 @@ export function ContactModal({ open, topic, onClose }: Props) {
               <Calendar size={22} />
             </span>
             <span className="contact-option__text">
-              <strong>Book a call</strong>
-              <span>Pick a time on our calendar</span>
+              <strong>Book a Partner Marketing Consultation</strong>
+              <span>Pick a 30-minute time directly on our calendar</span>
             </span>
             <ArrowUpRight className="contact-option__arrow" />
             <span className="visually-hidden">(opens in a new tab)</span>

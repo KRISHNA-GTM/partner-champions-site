@@ -6,8 +6,9 @@ import { mailtoHref } from '../../utils/contact'
 import { ArrowRight } from '../ui/Icons'
 import './Footer.css'
 
+const CURRENT_YEAR = new Date().getFullYear()
+
 export function Footer() {
-  const year = new Date().getFullYear()
   const socials = SOCIAL_LINKS.filter((s) => s.href.trim())
 
   return (
@@ -24,14 +25,11 @@ export function Footer() {
           <nav className="footer__col" aria-label="Footer">
             <p className="footer__heading">Explore</p>
             <ul>
-              {NAV_ITEMS.map((n) => (
+              {NAV_ITEMS.filter((n) => n.id !== 'contact').map((n) => (
                 <li key={n.id}>
                   <a href={`#${n.id}`}>{n.label}</a>
                 </li>
               ))}
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
             </ul>
           </nav>
 
@@ -41,7 +39,7 @@ export function Footer() {
               {CONTACT_EMAIL}
             </a>
             <BookingCta className="text-link footer__talk">
-              <span>Let's talk</span> <ArrowRight size={16} />
+              <span>Book a consultation</span> <ArrowRight size={16} />
             </BookingCta>
             {socials.length > 0 && (
               <ul className="footer__social">
@@ -59,7 +57,7 @@ export function Footer() {
 
         <div className="footer__bottom">
           <p>
-            © {year} {COMPANY_NAME}. All rights reserved.
+            © {CURRENT_YEAR} {COMPANY_NAME}. All rights reserved.
           </p>
           <a href="#top" className="footer__top-link">
             Back to top
