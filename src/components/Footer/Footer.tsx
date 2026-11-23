@@ -1,13 +1,14 @@
 import logoWhite from '../../assets/logo-white.png'
 import { COMPANY_NAME, CONTACT_EMAIL, SOCIAL_LINKS, TAGLINE } from '../../config/site'
-import { NAV_ITEMS } from '../../data/content'
+import { NAV_ITEMS, SERVICES } from '../../data/content'
 import { BookingCta } from '../contact/BookingCta'
 import { mailtoHref } from '../../utils/contact'
 import { ArrowRight } from '../ui/Icons'
 import './Footer.css'
 
+const CURRENT_YEAR = new Date().getFullYear()
+
 export function Footer() {
-  const year = new Date().getFullYear()
   const socials = SOCIAL_LINKS.filter((s) => s.href.trim())
 
   return (
@@ -36,12 +37,23 @@ export function Footer() {
           </nav>
 
           <div className="footer__col">
+            <p className="footer__heading">Services</p>
+            <ul>
+              {SERVICES.map((s) => (
+                <li key={s.title}>
+                  <a href="#services">{s.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="footer__col">
             <p className="footer__heading">Contact</p>
             <a href={mailtoHref()} className="footer__email">
               {CONTACT_EMAIL}
             </a>
             <BookingCta className="text-link footer__talk">
-              <span>Let's talk</span> <ArrowRight size={16} />
+              <span>Book a consultation</span> <ArrowRight size={16} />
             </BookingCta>
             {socials.length > 0 && (
               <ul className="footer__social">
@@ -59,7 +71,7 @@ export function Footer() {
 
         <div className="footer__bottom">
           <p>
-            © {year} {COMPANY_NAME}. All rights reserved.
+            © {CURRENT_YEAR} {COMPANY_NAME}. All rights reserved.
           </p>
           <a href="#top" className="footer__top-link">
             Back to top

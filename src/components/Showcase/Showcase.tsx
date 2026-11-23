@@ -1,4 +1,4 @@
-import { vars } from '../../utils/style'
+import { useRef, useState, type KeyboardEvent } from 'react'
 import { SectionHeading } from '../ui/SectionHeading'
 import './Showcase.css'
 
@@ -155,167 +155,169 @@ function SocialPost() {
   )
 }
 
-const KIT = [
-  { name: 'Partner email sequence', meta: '3 emails', type: 'DOC' },
-  { name: 'Social posts and images', meta: '6 posts', type: 'IMG' },
-  { name: 'Co-branded landing page', meta: 'Template', type: 'WEB' },
-  { name: 'Sales one-pager', meta: '1 page', type: 'PDF' },
-  { name: 'Call script and follow-up', meta: 'Talk track', type: 'DOC' },
+const CAMPAIGN_ASSETS = [
+  {
+    role: 'STRATEGY',
+    name: 'Joint Cloud Cost Review Offer',
+    desc: 'Target account criteria, joint value prop & 90-day calendar',
+    status: 'Planned',
+  },
+  {
+    role: 'EMAILS',
+    name: '3-Part Outbound Email Cadence',
+    desc: 'Written in partner’s voice, co-branded & ready to dispatch',
+    status: 'Written',
+  },
+  {
+    role: 'PAGE',
+    name: 'Co-Branded Conversion Landing Page',
+    desc: 'Custom registration copy & lead capture routed to reps',
+    status: 'Live',
+  },
+  {
+    role: 'EVENT',
+    name: 'Live Webinar Deck & Promotion',
+    desc: 'Slide deck, abstracts, speaker prep & hosting management',
+    status: 'Scheduled',
+  },
+  {
+    role: 'SALES KIT',
+    name: 'Partner Sales Enablement Kit',
+    desc: 'Rep talk tracks, objection handling & customer leave-behind',
+    status: 'Delivered',
+  },
 ]
 
 export function CampaignKit() {
   return (
     <div className="mk mk-kit">
       <div className="mk-kit__head">
-        <span className="mk-kit__folder" />
-        <div>
-          <p className="mk-kit__t">Partner Campaign Kit</p>
-          <p className="mk-kit__s">Cloud cost review · Q3</p>
+        <div className="mk-kit__status-pill">
+          <span className="mk-kit__dot" />
+          <span>Managed Partner Campaign</span>
+        </div>
+        <div className="mk-kit__title-wrap">
+          <p className="mk-kit__t">Cloud Cost Review Campaign Pack</p>
+          <p className="mk-kit__s">Fully planned, produced & coordinated for your partners</p>
         </div>
       </div>
       <ul className="mk-kit__files">
-        {KIT.map((f) => (
+        {CAMPAIGN_ASSETS.map((f) => (
           <li key={f.name}>
-            <span className={`mk-file mk-file--${f.type.toLowerCase()}`}>{f.type}</span>
-            <b>{f.name}</b>
-            <small>{f.meta}</small>
+            <span className={`mk-file mk-file--${f.role.toLowerCase().replace(/[^a-z]/g, '')}`}>{f.role}</span>
+            <div className="mk-kit__file-info">
+              <b>{f.name}</b>
+              <small>{f.desc}</small>
+            </div>
+            <span className="mk-kit__badge-status">{f.status}</span>
             <span className="mk-check" />
           </li>
         ))}
       </ul>
       <div className="mk-kit__foot">
-        <span className="mk-pill">Ready to co-brand</span>
-        <span className="mk-btn mk-btn--sm">Download kit</span>
-      </div>
-    </div>
-  )
-}
-
-const ACCOUNTS = [
-  { a: 'Account 01', seg: 'Healthcare', owner: 'Partner A', angle: 'Compliance costs', tier: 1 },
-  { a: 'Account 02', seg: 'Retail', owner: 'Partner B', angle: 'Seasonal scaling', tier: 1 },
-  { a: 'Account 03', seg: 'Financial services', owner: 'Partner A', angle: 'Renewal timing', tier: 2 },
-  { a: 'Account 04', seg: 'Manufacturing', owner: 'Partner C', angle: 'Usage audit', tier: 2 },
-]
-
-function AbmBrief() {
-  return (
-    <div className="mk mk-abm">
-      <div className="mk-abm__head">
-        <p className="mk-abm__t">ABM brief · Wave 1</p>
-        <span className="mk-pill mk-pill--blue">4 target accounts</span>
-      </div>
-      <div className="mk-abm__table" role="presentation">
-        <div className="mk-abm__row mk-abm__row--h">
-          <span>Account</span>
-          <span>Segment</span>
-          <span>Partner owner</span>
-          <span>Message angle</span>
-        </div>
-        {ACCOUNTS.map((r) => (
-          <div key={r.a} className="mk-abm__row">
-            <span>
-              <i className={`mk-tier mk-tier--${r.tier}`}>T{r.tier}</i>
-              {r.a}
-            </span>
-            <span>{r.seg}</span>
-            <span>{r.owner}</span>
-            <span>{r.angle}</span>
-          </div>
-        ))}
-      </div>
-      <ol className="mk-abm__plan">
-        <li>
-          <small>Wk 1</small>Email
-        </li>
-        <li>
-          <small>Wk 2</small>LinkedIn
-        </li>
-        <li>
-          <small>Wk 3</small>Event invite
-        </li>
-        <li>
-          <small>Wk 4</small>Partner call
-        </li>
-      </ol>
-    </div>
-  )
-}
-
-const CHAPTERS = ['Who to target', 'Key messages', 'Handling objections', 'Campaign calendar']
-
-function Playbook() {
-  return (
-    <div className="mk mk-book">
-      <div className="mk-book__cover">
-        <CoBrand />
-        <span className="mk-kicker mk-kicker--light">Partner playbook</span>
-        <p>Selling the cloud cost review</p>
-        <small>For partner sales teams · v1.0</small>
-      </div>
-      <div className="mk-book__page">
-        <p className="mk-book__h">Contents</p>
-        <ol>
-          {CHAPTERS.map((c, i) => (
-            <li key={c}>
-              <span>0{i + 1}</span>
-              {c}
-              <i>{4 + i * 3}</i>
-            </li>
-          ))}
-        </ol>
-        <div className="mk-book__quote">
-          <span className="mk-kicker">Talk track</span>
-          <p>"When is your next cloud renewal? We can show you where the spend goes before then."</p>
-        </div>
+        <span className="mk-pill">Zero Partner Marketing Burden</span>
+        <span className="mk-kit__exec-tag">
+          <span className="mk-kit__check-icon">✓</span> Executed by Partner Champions
+        </span>
       </div>
     </div>
   )
 }
 
 const PIECES = [
-  { key: 'lp', label: 'Co-branded landing page', service: 'Co-Marketing & Content', art: <LandingPage /> },
-  { key: 'wb', label: 'Webinar promotion', service: 'Webinars & Events', art: <Webinar /> },
-  { key: 'em', label: 'Partner email campaign', service: 'Partner Campaigns', art: <Email /> },
-  { key: 'li', label: 'LinkedIn campaign', service: 'Co-Marketing & Content', art: <SocialPost /> },
-  { key: 'kit', label: 'Partner campaign kit', service: 'Partner Enablement', art: <CampaignKit /> },
-  { key: 'abm', label: 'ABM campaign brief', service: 'Account-Based Marketing', art: <AbmBrief /> },
-  { key: 'pb', label: 'Partner playbook', service: 'Partner Enablement', art: <Playbook /> },
+  {
+    key: 'kit',
+    title: 'Campaign execution pack',
+    text: 'The complete turn-key campaign: strategy, co-branded assets, event and sales kit, ready for partners to run.',
+    art: <CampaignKit />,
+  },
+  {
+    key: 'em',
+    title: 'Partner emails',
+    text: "Outbound campaign messaging and follow-up cadences, written in the partner's voice.",
+    art: <Email />,
+  },
+  {
+    key: 'lp',
+    title: 'Co-branded landing page',
+    text: 'A dedicated conversion asset designed to capture leads directly for partner reps.',
+    art: <LandingPage />,
+  },
+  {
+    key: 'wb',
+    title: 'Joint webinar',
+    text: 'Turn-key event promotion, presentation slides and co-hosting coordination handled end to end.',
+    art: <Webinar />,
+  },
+  {
+    key: 'li',
+    title: 'Social promotion',
+    text: 'Ghostwritten posts and co-branded graphics ready for partner reps to publish.',
+    art: <SocialPost />,
+  },
 ]
 
 export function Showcase() {
+  const [active, setActive] = useState(0)
+  const tabs = useRef<(HTMLButtonElement | null)[]>([])
+  const piece = PIECES[active]
+
+  // Arrow keys move between deliverables (WAI-ARIA tabs pattern)
+  const onKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    const step = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 0
+    if (!step) return
+    e.preventDefault()
+    const next = (active + step + PIECES.length) % PIECES.length
+    setActive(next)
+    tabs.current[next]?.focus()
+  }
+
   return (
     <section id="work" className="work section on-dark" aria-labelledby="work-title">
       <div className="container">
         <SectionHeading
           id="work-title"
-          eyebrow="What execution looks like"
+          eyebrow="What we deliver"
           title={
             <>
-              Campaigns partners can <span className="hl">put to work.</span>
+              Sample Campaign: <span className="hl">Cloud Cost Review</span>
             </>
           }
-          lead="One campaign, built out across the assets partners use. Illustrative examples made for this site, not client work."
+          lead="A turn-key co-marketing campaign planned, produced and coordinated for your partners. Ready to drive pipeline without asking them to build anything."
         />
 
-        <ul className="work__grid">
-          {PIECES.map((p, i) => (
-            <li key={p.key} className={`piece piece--${p.key} reveal`} style={vars({ '--delay': `${(i % 3) * 80}ms` })}>
-              <figure>
-                <div className="piece__stage" aria-hidden="true">
-                  {p.art}
-                </div>
-                <figcaption>
-                  <b>{p.label}</b>
-                  <span>{p.service}</span>
-                </figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
-        <p className="work__hint" aria-hidden="true">
-          Swipe to see more
-        </p>
+        <div className="viewer reveal">
+          <div className="viewer__tabs" role="tablist" aria-label="Campaign deliverables" onKeyDown={onKeyDown}>
+            {PIECES.map((p, i) => (
+              <button
+                key={p.key}
+                ref={(el) => {
+                  tabs.current[i] = el
+                }}
+                type="button"
+                role="tab"
+                id={`work-tab-${p.key}`}
+                aria-selected={i === active}
+                aria-controls="work-panel"
+                tabIndex={i === active ? 0 : -1}
+                className={`viewer__tab ${i === active ? 'is-active' : ''}`}
+                onClick={() => setActive(i)}
+              >
+                <b>{p.title}</b>
+                <span>{p.text}</span>
+              </button>
+            ))}
+          </div>
+
+          <div id="work-panel" className="viewer__panel" role="tabpanel" aria-labelledby={`work-tab-${piece.key}`}>
+            <p className="viewer__desc">{piece.text}</p>
+            <div className={`viewer__stage viewer__stage--${piece.key}`} aria-hidden="true">
+              <div key={piece.key} className="viewer__art">
+                {piece.art}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

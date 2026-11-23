@@ -2,22 +2,23 @@
   width: min(640px, 100% - 32px);
   max-height: min(88vh, 860px);
   padding: 0;
-  border: 0;
-  border-radius: var(--radius-l);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
   background: var(--paper);
   color: var(--ink);
-  box-shadow: 0 40px 120px -20px rgba(9, 24, 47, 0.55);
+  box-shadow: 0 40px 120px -20px rgba(5, 11, 20, 0.7);
   overflow: auto;
   overscroll-behavior: contain;
 }
 
 .modal[open] {
-  animation: modal-in 0.45s var(--ease-out);
+  animation: modal-in 0.45s var(--ease-apple);
 }
 
 .modal::backdrop {
-  background: rgba(9, 24, 47, 0.62);
-  backdrop-filter: blur(3px);
+  background: rgba(5, 11, 20, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .modal[open]::backdrop {

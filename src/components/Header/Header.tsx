@@ -93,7 +93,10 @@ export function Header() {
         </nav>
 
         <div className="site-header__actions">
-          <BookingCta className="btn btn--primary btn--small site-header__cta">Let's Talk</BookingCta>
+          <BookingCta className="btn btn--primary btn--small site-header__cta">
+            <span className="site-header__cta-full">Book a Partner Marketing Consultation</span>
+            <span className="site-header__cta-short">Book Consultation</span>
+          </BookingCta>
           <button
             ref={toggleRef}
             type="button"
@@ -125,7 +128,7 @@ export function Header() {
         </nav>
         <div className="mobile-menu__foot">
           <BookingCta className="btn btn--primary">
-            Let's Talk <ArrowRight />
+            Book a Partner Marketing Consultation <ArrowRight />
           </BookingCta>
           <a href={mailtoHref()} className="mobile-menu__email">
             {CONTACT_EMAIL}

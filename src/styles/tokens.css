@@ -1,9 +1,10 @@
 :root {
-  /* Brand palette */
-  --navy-900: #09182f;
-  --navy-800: #0c1f3d;
-  --navy-700: #102c59;
-  --navy-600: #1a3a6e;
+  /* Apple-inspired cinematic palette */
+  --navy-950: #050b14;
+  --navy-900: #081326;
+  --navy-800: #0d1e3a;
+  --navy-700: #12284c;
+  --navy-600: #1a386b;
   --royal: #155eef;
   --royal-600: #0f4fd1;
   --electric: #2878ff;
@@ -11,31 +12,47 @@
   --gold: #d5a62b;
   --gold-soft: #e8c66a;
   --paper: #ffffff;
-  --mist: #f5f7fa;
-  --ink: #172b4d;
+  --mist: #f8fafc;
+  --mist-darker: #f1f5f9;
+  --ink: #0f172a;
   --ink-soft: #64748b;
-  --line: #e5eaf1;
-  --line-strong: #d3dbe7;
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
 
-  /* On-dark text */
+  /* On-dark text & surfaces */
   --on-dark: #ffffff;
-  --on-dark-soft: #b4c2da;
-  --on-dark-faint: rgba(180, 194, 218, 0.55);
-  --line-dark: rgba(143, 180, 255, 0.16);
+  --on-dark-soft: #94a3b8;
+  --on-dark-faint: rgba(148, 163, 184, 0.55);
+  --line-dark: rgba(255, 255, 255, 0.1);
+  --line-dark-subtle: rgba(255, 255, 255, 0.06);
+
+  /* Apple glassmorphism tokens */
+  --glass-bg: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-dark: rgba(8, 19, 38, 0.82);
+  --glass-dark-border: rgba(255, 255, 255, 0.1);
+  --glass-dark-card: rgba(13, 30, 58, 0.65);
+
+  /* Apple-tier multi-layer shadows */
+  --shadow-apple-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-apple-md: 0 10px 30px -8px rgba(15, 23, 42, 0.08), 0 2px 8px rgba(15, 23, 42, 0.03);
+  --shadow-apple-lg: 0 20px 48px -12px rgba(15, 23, 42, 0.12), 0 4px 16px rgba(15, 23, 42, 0.05);
+  --shadow-apple-dark: 0 28px 70px -20px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-glow: 0 0 60px -10px rgba(40, 120, 255, 0.28);
 
   /* Type */
-  --font-display: 'Manrope Variable', 'Manrope', 'Segoe UI', system-ui, sans-serif;
-  --font-body: 'Inter Variable', 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Manrope Variable', 'Manrope', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+  --font-body: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', system-ui, sans-serif;
 
-  --fs-hero: clamp(2.5rem, 1.2rem + 5vw, 5.5rem);
-  --fs-h2: clamp(2rem, 1.3rem + 2.6vw, 3.4rem);
-  --fs-h3: clamp(1.3rem, 1.1rem + 0.7vw, 1.65rem);
+  --fs-hero: clamp(2.5rem, 1.2rem + 4.8vw, 5.25rem);
+  --fs-h2: clamp(2rem, 1.3rem + 2.5vw, 3.4rem);
+  --fs-h3: clamp(1.25rem, 1.1rem + 0.65vw, 1.6rem);
   --fs-lead: clamp(1.06rem, 1rem + 0.35vw, 1.3rem);
   --fs-body: 1.0625rem;
   --fs-small: 0.9375rem;
   --fs-micro: 0.75rem;
 
-  /* Space: one scale, used everywhere */
+  /* Space scale */
   --s-1: 4px;
   --s-2: 8px;
   --s-3: 12px;
@@ -48,17 +65,20 @@
   --gutter: clamp(20px, 4vw, 48px);
   --max: 1200px;
 
-  /* Section rhythm: default, tight (dense or follow-on sections), loose (statement sections) */
-  --section-y: clamp(64px, 7.5vw, 104px);
-  --section-y-tight: clamp(56px, 6vw, 80px);
-  --section-y-loose: clamp(80px, 9vw, 128px);
-  /* Gap between a section heading and the content it introduces */
-  --head-gap: clamp(32px, 4vw, 48px);
+  /* Section rhythm */
+  --section-y: clamp(72px, 8vw, 112px);
+  --section-y-tight: clamp(56px, 6vw, 84px);
+  --section-y-loose: clamp(88px, 10vw, 136px);
+  --head-gap: clamp(36px, 4.5vw, 52px);
 
-  /* Shape and motion */
-  --radius-s: 6px;
-  --radius-m: 14px;
-  --radius-l: 22px;
+  /* Apple-inspired squircle shape and motion */
+  --radius-xs: 6px;
+  --radius-s: 10px;
+  --radius-m: 18px;
+  --radius-l: 26px;
+  --radius-xl: 34px;
+  --radius-pill: 9999px;
+  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
   --header-h: 76px;

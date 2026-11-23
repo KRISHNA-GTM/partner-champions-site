@@ -3,10 +3,15 @@
   inset: 0 0 auto;
   z-index: 50;
   color: #fff;
+  background: rgba(5, 11, 20, 0.45);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition:
-    background 0.35s,
-    box-shadow 0.35s,
-    color 0.35s;
+    background 0.35s var(--ease-apple),
+    border-color 0.35s var(--ease-apple),
+    box-shadow 0.35s var(--ease-apple),
+    color 0.35s var(--ease-apple);
 }
 
 .site-header__bar {
@@ -15,19 +20,20 @@
   justify-content: space-between;
   gap: 24px;
   height: var(--header-h);
-  transition: height 0.35s var(--ease-out);
+  transition: height 0.35s var(--ease-apple);
 }
 
 .site-header.is-solid {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: saturate(160%) blur(14px);
-  -webkit-backdrop-filter: saturate(160%) blur(14px);
-  box-shadow: 0 1px 0 var(--line);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
   color: var(--navy-700);
 }
 
 .site-header.is-solid .site-header__bar {
-  height: 66px;
+  height: 64px;
 }
 
 /* Logo swap: white on the dark hero, full color once the bar turns white */
@@ -239,6 +245,19 @@
   from {
     opacity: 0;
     transform: translateY(16px);
+  }
+}
+
+.site-header__cta-short {
+  display: none;
+}
+
+@media (max-width: 1180px) {
+  .site-header__cta-full {
+    display: none;
+  }
+  .site-header__cta-short {
+    display: inline;
   }
 }
 

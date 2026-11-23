@@ -29,7 +29,7 @@ Everything you are likely to change lives in two files.
 
 `src/data/content.ts`: navigation, audience, challenges, the "where we fit" diagram, services (with icon keys) and deliverables, process stages and outcomes.
 
-`src/components/Showcase/Showcase.tsx`: the illustrative asset mockups in "Our Work" (landing page, email, webinar, LinkedIn post, campaign kit, ABM brief, playbook). Copy for the mockups lives in that file.
+`src/components/Showcase/Showcase.tsx`: "Campaigns", one sample campaign (Cloud Cost Review) with a selectable deliverable viewer (partner emails, landing page, webinar, social, partner sales kit). Copy for the mockups lives in that file.
 
 `index.html`: page title, meta description and Open Graph tags. Update `og:url` / `og:image` if the domain is not `partnerchampions.com`.
 
@@ -54,11 +54,11 @@ public/          favicon, apple-touch-icon, og-image
 ## Content notes
 
 - No client names, metrics, testimonials or company history appear on the page. Outcomes are qualitative and carry no numbers.
-- The "Our Work" mockups are labelled on the page as illustrative examples, not client work. They use generic "Your Brand" and "Partner" marks only.
+- The "Campaigns" mockups are a sample campaign (Cloud Cost Review). Never present them as client work or attach results to them. They use generic "Your Brand" and "Partner" marks only.
 - There is no Resources or Insights section. Add one when real articles exist.
 
 ## Page structure
 
-Hero, Why partner programs stall (problems + where-we-fit diagram), Services, Our work, How we work, Outcomes, Final CTA + footer. The email address appears as a plain mailto link; there are no copy buttons.
+Hero (one-line positioning), Why partner programs stall (four problems, then a who-does-what flow), Services (need first, service name second), Campaigns, Why Partner Champions (differentiators & specialized execution engine), Our approach, What changes (before and after), Final CTA + footer. Dominant CTA reads "Book a Partner Marketing Consultation" everywhere (header, hero, final CTA, footer, contact modal); secondary is "Explore our services"; email is a text link only. The email address appears as a plain mailto link; there are no copy buttons.
 
 Spacing tokens live in `src/styles/tokens.css` (`--s-1` to `--s-9`, `--section-y`, `--section-y-tight`, `--section-y-loose`, `--head-gap`). Every section heading uses `SectionHeading` (`src/components/ui/SectionHeading.tsx`).

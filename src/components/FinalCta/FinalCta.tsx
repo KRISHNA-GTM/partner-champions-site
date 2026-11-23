@@ -25,16 +25,18 @@ export function FinalCta() {
       <div className="container final__inner">
         <p className="eyebrow reveal">Start here</p>
         <h2 id="final-title" className="final__title reveal">
-          Let's build your partner marketing <span className="hl">program.</span>
+          Your partners are already part of your growth plan. Let's help them <span className="hl">put it into action.</span>
         </h2>
-        <p className="lead reveal">Tell us about your partners and goals. We'll show you where we would start.</p>
+        <p className="lead reveal">
+          Schedule a 30-minute consultation to walk through your partner program, identify your execution bottlenecks, and discuss ready-to-run campaigns that get your partners to market.
+        </p>
         <div className="final__actions reveal">
           <BookingCta className="btn btn--primary final__btn">
-            Let's Talk About Your Partner Marketing <ArrowRight />
+            Book a Partner Marketing Consultation <ArrowRight />
           </BookingCta>
         </div>
         <p className="final__email reveal">
-          Or write to <a href={mailtoHref()}>{CONTACT_EMAIL}</a>
+          Prefer email? <a href={mailtoHref()}>{CONTACT_EMAIL}</a>
         </p>
       </div>
     </section>

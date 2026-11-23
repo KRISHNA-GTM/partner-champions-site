@@ -58,30 +58,26 @@ export function Services() {
       <div className="container">
         <SectionHeading
           id="services-title"
-          eyebrow="What we do"
+          eyebrow="Services"
           title={
             <>
-              Six services. <span className="hl">Real deliverables.</span>
+              Tell us what you need. <span className="hl">We'll handle the work.</span>
             </>
           }
-          lead="From a single campaign to an ongoing partner marketing program, we bring the strategy, creative and execution together."
+          lead="Start with one campaign or combine services into an ongoing program."
         />
 
         <ul className="svc-grid">
           {SERVICES.map((s, i) => (
-            <li key={s.num} className="svc reveal" style={vars({ '--delay': `${(i % 3) * 70}ms` })}>
+            <li key={s.title} className="svc reveal" style={vars({ '--delay': `${(i % 3) * 70}ms` })}>
               <span className="svc__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" width="24" height="24">
                   {ICONS[s.icon]}
                 </svg>
               </span>
-              <h3>{s.title}</h3>
+              <h3>{s.need}</h3>
               <p className="svc__summary">{s.summary}</p>
-              <ul className="svc__list" aria-label={`${s.title} deliverables`}>
-                {s.deliverables.map((d) => (
-                  <li key={d}>{d}</li>
-                ))}
-              </ul>
+              <p className="svc__name">{s.title}</p>
             </li>
           ))}
         </ul>

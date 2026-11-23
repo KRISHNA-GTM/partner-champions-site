@@ -11,7 +11,9 @@ export const CONTACT_EMAIL = 'sales@partnerchampions.com'
 
 export const COMPANY_NAME = 'Partner Champions LLC'
 
-export const TAGLINE = 'Partner marketing that drives revenue, not just activity.'
+export const TAGLINE = 'Done-for-you partner marketing execution that turns partner relationships into revenue.'
+
+export const DOMINANT_CTA = 'Book a Partner Marketing Consultation'
 
 /**
  * Social profiles. Leave a value empty to hide it; nothing renders until a real URL is set.

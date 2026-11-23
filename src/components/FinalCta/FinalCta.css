@@ -1,13 +1,15 @@
 /* Final CTA and footer share one navy surface, so the page ends as one block */
 .final {
   position: relative;
-  padding: var(--section-y) 0;
+  padding: var(--section-y-loose) 0;
   background:
-    radial-gradient(55% 70% at 88% 30%, rgba(21, 94, 239, 0.32), transparent 70%),
-    var(--navy-900);
+    radial-gradient(65% 75% at 85% 25%, rgba(21, 94, 239, 0.28), transparent 70%),
+    radial-gradient(45% 55% at 10% 80%, rgba(13, 30, 58, 0.8), transparent 70%),
+    var(--navy-950);
   color: #fff;
   overflow: hidden;
   isolation: isolate;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .final__art {
@@ -17,13 +19,13 @@
   z-index: -1;
   width: min(620px, 60vw);
   height: auto;
-  opacity: 0.5;
+  opacity: 0.45;
   transform: translateY(-50%);
 }
 
 .final__hex {
   fill: none;
-  stroke: rgba(143, 180, 255, 0.16);
+  stroke: rgba(143, 180, 255, 0.14);
   stroke-width: 1.2;
 }
 
@@ -37,13 +39,19 @@
   display: grid;
   justify-items: start;
   gap: var(--s-5);
+  max-width: 44rem;
 }
 
 .final__title {
-  max-width: 12em;
-  font-size: clamp(2.3rem, 1.4rem + 3.2vw, 4.2rem);
-  letter-spacing: -0.045em;
-  line-height: 1.02;
+  font-size: clamp(2.1rem, 1.3rem + 2.6vw, 3.6rem);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.final__title .hl {
+  background: linear-gradient(135deg, #fff 10%, var(--electric) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .final__actions {
@@ -54,8 +62,10 @@
 }
 
 .final__btn {
-  min-height: 58px;
-  padding: 0 28px;
+  min-height: 56px;
+  padding: 0 32px;
+  font-size: 1rem;
+  box-shadow: 0 12px 32px -8px rgba(21, 94, 239, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .final__email {
@@ -68,7 +78,8 @@
   font-weight: 600;
   text-decoration: underline;
   text-decoration-color: rgba(255, 255, 255, 0.35);
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 0.2s var(--ease-apple);
 }
 
 .final__email a:hover {
@@ -81,7 +92,7 @@
     bottom: -30%;
     right: -45%;
     width: 110vw;
-    opacity: 0.3;
+    opacity: 0.25;
     transform: none;
   }
 

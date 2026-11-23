@@ -12,37 +12,42 @@ export function Hero() {
 
       <div className="container hero__inner">
         <div className="hero__copy">
-          <p className="eyebrow hero__in" style={vars({ '--d': '0ms' })}>
-            Partner Marketing Services
-          </p>
+          <div className="hero__badge-wrap hero__in" style={vars({ '--d': '0ms' })}>
+            <span className="hero__badge">
+              <span className="hero__badge-dot" /> Partner Marketing Execution
+            </span>
+          </div>
           <h1 id="hero-title" className="hero__title">
             <span className="hero__line hero__in" style={vars({ '--d': '80ms' })}>
-              Partner marketing
+              Partners don't market on their own.
             </span>{' '}
-            <span className="hero__line hero__in" style={vars({ '--d': '160ms' })}>
-              that drives <span className="hero__accent">revenue</span>,
-            </span>{' '}
-            <span className="hero__line hero__dim hero__in" style={vars({ '--d': '240ms' })}>
-              not just activity.
+            <span className="hero__line hero__dim hero__in" style={vars({ '--d': '160ms' })}>
+              We execute the campaigns that turn them into <span className="hero__accent">revenue.</span>
             </span>
           </h1>
           <p className="hero__lead hero__in" style={vars({ '--d': '380ms' })}>
-            Partner Champions is the partner marketing team for technology brands. We plan, build and run the campaigns
-            your partners use to sell.
+            Recruiting partners is easy. Getting them to market is where programs stall. We plan, build and run the
+            turn-key campaigns, co-marketing and sales kits your partners take to customers. That means real pipeline
+            and revenue, not just partner badges.
           </p>
           <div className="hero__ctas hero__in" style={vars({ '--d': '480ms' })}>
             <BookingCta>
-              Let's Talk About Your Partner Marketing <ArrowRight />
+              Book a Partner Marketing Consultation <ArrowRight />
             </BookingCta>
+            <a href="#services" className="btn btn--ghost-dark">
+              Explore our services
+            </a>
           </div>
         </div>
 
-        {/* What partners receive from us: a ready-to-launch campaign kit. Desktop only. */}
-        <figure className="hero__visual hero__in" style={vars({ '--d': '420ms' })} aria-label="Example partner campaign">
+        {/* Done-for-you campaign pack delivered and managed for partners */}
+        <figure className="hero__visual hero__in" style={vars({ '--d': '420ms' })} aria-label="Partner campaign execution pack">
           <div className="hv hv--kit" aria-hidden="true">
             <CampaignKit />
           </div>
-          <figcaption className="hero__visual-cap">What a partner receives from us. Illustrative example.</figcaption>
+          <figcaption className="hero__visual-cap">
+            Done-for-you execution: a ready-to-launch campaign pack built and coordinated for your partners.
+          </figcaption>
         </figure>
       </div>
 

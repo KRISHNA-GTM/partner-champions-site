@@ -9,13 +9,13 @@ export function Approach() {
       <div className="container">
         <SectionHeading
           id="approach-title"
-          eyebrow="How we work"
+          eyebrow="Our approach"
           title={
             <>
-              Four stages, <span className="hl">one team</span> from plan to launch.
+              A clear process. <span className="hl">You won't have to figure it out yourself.</span>
             </>
           }
-          lead="The same people from first review to campaign results. Each stage ends with something you can use."
+          lead="Four stages, one team, from first review to the next campaign."
         />
 
         <ol className="process">
@@ -25,14 +25,9 @@ export function Approach() {
                 <span className="process__dot">{p.num}</span>
               </div>
               <div className="process__body">
+                <p className="process__label">{p.verb}</p>
                 <h3>{p.title}</h3>
                 <p>{p.description}</p>
-                <p className="process__label">You get</p>
-                <ul>
-                  {p.deliverables.map((d) => (
-                    <li key={d}>{d}</li>
-                  ))}
-                </ul>
               </div>
             </li>
           ))}
