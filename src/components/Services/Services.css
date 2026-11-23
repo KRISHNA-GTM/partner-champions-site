@@ -43,31 +43,18 @@
 }
 
 .pillar__summary {
-  color: var(--ink-soft);
+  color: #475569;
+  font-size: 1.0625rem;
   line-height: 1.55;
 }
 
-.pillar__list {
-  display: grid;
-  align-content: start;
-  gap: 9px;
-  padding-top: 16px;
+.pillar__tags {
+  align-self: start;
+  padding-top: 14px;
   border-top: 1px solid var(--line);
-}
-
-.pillar__list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  color: var(--ink);
-  font-size: var(--fs-small);
-  line-height: 1.4;
-}
-
-.pillar__list svg {
-  flex: none;
-  margin-top: 2px;
   color: var(--royal);
+  font-size: var(--fs-small);
+  font-weight: 600;
 }
 
 /* drawing parts */

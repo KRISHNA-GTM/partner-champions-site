@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 import { SERVICES } from '../../data/content'
-import { Check } from '../ui/Icons'
 import { SectionHeading } from '../ui/SectionHeading'
 import './Services.css'
 
@@ -71,14 +70,7 @@ export function Services() {
               <div className="pillar__art">{ART[item.key]}</div>
               <h3>{item.title}</h3>
               <p className="pillar__summary">{item.summary}</p>
-              <ul className="pillar__list">
-                {item.deliverables.map((d) => (
-                  <li key={d}>
-                    <Check size={16} />
-                    {d}
-                  </li>
-                ))}
-              </ul>
+              <p className="pillar__tags">{item.tags}</p>
             </li>
           ))}
         </ul>

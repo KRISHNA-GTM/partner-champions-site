@@ -95,7 +95,7 @@
 }
 
 .mk-kicker--light {
-  color: var(--gold-soft);
+  color: var(--gold);
 }
 
 .mk-pill {
@@ -423,7 +423,7 @@
 .mk-webinar__speakers i.is-partner {
   background: transparent;
   box-shadow: inset 0 0 0 2px var(--gold);
-  color: var(--gold-soft);
+  color: var(--gold);
 }
 
 /* Social post */
@@ -533,7 +533,7 @@
 }
 
 .mk-kit-doc__head span {
-  color: var(--gold-soft);
+  color: var(--gold);
   font-size: 10px;
   font-weight: 600;
 }

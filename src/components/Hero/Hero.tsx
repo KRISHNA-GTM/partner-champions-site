@@ -139,14 +139,14 @@ export function Hero() {
             Partner marketing that drives revenue, not just activity.
           </h1>
           <p className="hero__lead">
-            Partners don’t market on their own. So we do it for them: we plan, build and launch complete co‑branded
-            campaigns, from emails and landing pages to webinars and sales kits.
+            Your partners don’t market on their own. We make it happen: we plan, build and run the co‑branded campaigns
+            your partners can actually take to market.
           </p>
           <div className="hero__actions">
             <BookingCta>
               {DOMINANT_CTA} <ArrowRight />
             </BookingCta>
-            <a href="#work" className="hero__text-link">See a full campaign</a>
+            <a href="#work" className="hero__text-link">See a campaign</a>
           </div>
         </div>
 

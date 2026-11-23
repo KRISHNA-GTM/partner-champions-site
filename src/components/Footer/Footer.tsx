@@ -16,18 +16,18 @@ export function Footer() {
     <footer id="contact" className="footer on-dark" aria-labelledby="closing-title">
       <div className="container">
         <div className="footer__cta">
-          <h2 id="closing-title" className="footer__title">Your next partner campaign starts here.</h2>
+          <h2 id="closing-title" className="footer__title">Let’s talk about your partner marketing.</h2>
           <div className="footer__cta-side">
             <p>
-              Tell us which partners and which offer. We’ll help you shape the campaign, build it, and get it into your
-              partners’ hands.
+              Tell us where your partner marketing needs help. We’ll talk through your goals, your partners and what you
+              need to get moving.
             </p>
             <div className="footer__actions">
               <BookingCta>
                 {DOMINANT_CTA} <ArrowRight />
               </BookingCta>
-              <a href={mailtoHref()} className="footer__email">
-                {CONTACT_EMAIL}
+              <a href="#work" className="footer__link">
+                See a campaign
               </a>
             </div>
           </div>
@@ -53,6 +53,9 @@ export function Footer() {
               ))}
             </ul>
           </nav>
+          <a href={mailtoHref()} className="footer__email">
+            {CONTACT_EMAIL}
+          </a>
           <p className="footer__legal">
             © {CURRENT_YEAR} {COMPANY_NAME}
           </p>

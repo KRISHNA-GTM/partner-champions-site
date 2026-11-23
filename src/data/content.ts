@@ -2,55 +2,42 @@
 
 export const NAV_ITEMS = [
   { id: 'services', label: 'Services' },
-  { id: 'work', label: 'Sample campaign' },
+  { id: 'work', label: 'Campaigns' },
   { id: 'approach', label: 'How we work' },
   { id: 'contact', label: 'Contact' },
 ] as const
 
 export const GAP = {
   headline: 'Your partners signed up. So why aren’t they marketing?',
-  lead: 'Partner programs rarely stall for lack of interest. They stall because nobody turns your strategy into campaigns a partner can actually send.',
+  lead: 'You recruited the partners. But getting them to actively promote your solutions takes more than a portal full of assets.',
   points: [
     {
-      title: 'Assets sit in the portal',
-      text: 'Decks and battlecards get uploaded. Without a campaign around them, nobody uses them.',
+      title: 'Nothing to launch',
+      text: 'Partners don’t know which product, offer or campaign to promote.',
     },
     {
-      title: 'Reps, not marketers',
-      text: 'Most partners have reps, not marketers who can write emails, build pages or run webinars.',
+      title: 'No marketing capacity',
+      text: 'They have customers to serve and deals to close. Marketing your product isn’t their priority.',
     },
     {
-      title: 'Templates still need work',
-      text: 'An editable PDF is a to-do list for a partner. A finished campaign gets launched.',
+      title: 'Assets without execution',
+      text: 'Your team creates materials, but partners still have to adapt, assemble and send them.',
     },
     {
-      title: 'Your team has no time',
-      text: 'Direct targets come first, so partner approvals and follow-up slip every quarter.',
+      title: 'Nobody owns the process',
+      text: 'Planning, approvals, partner coordination and follow-up fall between teams.',
     },
   ],
 }
 
 export const ENGINE = {
-  headline: 'We do the work in the middle.',
+  headline: 'We turn your partner strategy into campaigns partners can actually run.',
   nodes: [
-    {
-      key: 'brand',
-      role: 'You',
-      text: 'Set the priorities: which products, which partners, which buyers.',
-    },
-    {
-      key: 'engine',
-      role: 'Partner Champions',
-      text: 'Plan, write, design, coordinate and run the campaign.',
-      chips: ['Campaign plan', 'Co-branded assets', 'Partner sales kits', 'Joint webinars', 'Lead handoff'],
-    },
-    {
-      key: 'partner',
-      role: 'Your partners',
-      text: 'Review, approve and send it to their customers.',
-    },
+    { key: 'brand', role: 'Your brand', text: 'Sets the strategy' },
+    { key: 'engine', role: 'Partner Champions', text: 'Plans, builds and runs the campaigns' },
+    { key: 'partner', role: 'Your partners', text: 'Take them to market' },
+    { key: 'customer', role: 'Customers', text: 'Hear from a partner they trust' },
   ],
-  outcome: 'Campaigns your partners actually take to market, and joint pipeline you can see.',
 }
 
 export const SERVICES = {
@@ -59,46 +46,39 @@ export const SERVICES = {
     {
       key: 'campaigns',
       title: 'Partner campaigns',
-      summary: 'A complete, co-branded campaign built around one clear customer offer. Partners launch it without writing a word.',
-      deliverables: ['Email sequences in the partner’s voice', 'Co-branded landing pages', 'Social posts and graphics', 'Campaign calendar'],
+      summary: 'We plan and build campaigns your partners can launch without starting from scratch.',
+      tags: 'Campaigns, email, landing pages',
     },
     {
       key: 'comarketing',
       title: 'Co-marketing and demand generation',
-      summary: 'Joint programs that put both brands in front of the same target buyers, with alignment and approvals handled for you.',
-      deliverables: ['Joint webinars and events', 'Shared target account lists', 'Coordinated outreach', 'MDF campaign execution'],
+      summary: 'We bring your brand and your partners together to reach shared customers and create opportunities.',
+      tags: 'Joint campaigns, webinars, ABM',
     },
     {
       key: 'enablement',
-      title: 'Partner enablement and sales kits',
-      summary: 'The practical material partner reps open before a call, so they can sell your product with confidence.',
-      deliverables: ['Talk tracks and discovery questions', 'Battlecards', 'Objection handling', 'Customer leave-behinds'],
+      title: 'Partner enablement',
+      summary: 'We give partners the messaging, materials and tools to promote and sell your solutions.',
+      tags: 'Sales kits, playbooks, messaging',
     },
   ],
 }
 
 export const CAMPAIGN = {
-  headline: 'One offer. Everything a partner needs to launch it.',
-  lead: 'This is the Cloud Cost Review campaign, the kind of package we build. Your partner gets the whole thing finished, not a template to fill in.',
-  offer: {
-    name: 'Free cloud cost review',
-    detail: 'A 90-day savings plan for mid-market teams, offered jointly by Your Brand and Partner ahead of renewal season.',
-  },
-  plan: [
-    { when: 'Week 1', what: 'Partner briefing and sales kit' },
-    { when: 'Week 2', what: 'Email 1, landing page and social go live' },
-    { when: 'Week 3', what: 'Joint webinar' },
-    { when: 'Week 4', what: 'Follow-up and last-call emails' },
-    { when: 'Ongoing', what: 'Leads routed to partner reps' },
+  headline: 'One campaign. Built for partners to launch.',
+  lead: 'How one offer becomes a complete, ready-to-run partner program.',
+  steps: [
+    { title: 'The campaign', text: 'A free cloud cost review. One clear offer partners can take to their customers.' },
+    { title: 'The assets', text: 'Partner emails, landing page, social content and sales materials, all co-branded.' },
+    { title: 'The launch', text: 'Partners know what to send, who to target and what to do next.' },
   ],
-  partnerJob: 'The partner’s job: review it, approve it, send it.',
 }
 
 export const PROCESS = [
-  { title: 'Plan', what: 'Agree on focus partners, target buyers and the customer offer.', get: 'Campaign brief' },
-  { title: 'Build', what: 'Write and design every asset, co-branded and approved.', get: 'Ready-to-launch kit' },
-  { title: 'Launch', what: 'Brief partner reps, coordinate sends and run the webinar.', get: 'Live campaign' },
-  { title: 'Refine', what: 'Review participation and lead handoff, then improve.', get: 'Next campaign plan' },
+  { title: 'Plan', what: 'Agree on objectives, audience, partners and the offer.', get: 'Campaign brief' },
+  { title: 'Build', what: 'Create the campaign assets and partner materials.', get: 'Ready-to-use campaign kit' },
+  { title: 'Launch', what: 'Coordinate partners and run the campaign.', get: 'Campaign in market' },
+  { title: 'Refine', what: 'Review engagement and improve.', get: 'Next campaign recommendations' },
 ]
 
 /** Legacy copy retained for the unused Expertise component. */

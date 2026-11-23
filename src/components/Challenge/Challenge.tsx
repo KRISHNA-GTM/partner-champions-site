@@ -19,26 +19,15 @@ export function Challenge() {
 
         <div className="engine on-dark" aria-labelledby="engine-title">
           <h3 id="engine-title" className="engine__title">{ENGINE.headline}</h3>
-
           <ol className="engine__flow">
             {ENGINE.nodes.map((n) => (
               <li key={n.key} className={`engine__node engine__node--${n.key}`}>
                 <span className="engine__mark" aria-hidden="true" />
                 <strong>{n.role}</strong>
                 <p>{n.text}</p>
-                {n.chips && (
-                  <ul className="engine__chips" aria-label="What Partner Champions handles">
-                    {n.chips.map((c) => <li key={c}>{c}</li>)}
-                  </ul>
-                )}
               </li>
             ))}
           </ol>
-
-          <p className="engine__outcome">
-            <span>The result</span>
-            {ENGINE.outcome}
-          </p>
         </div>
       </div>
     </section>
