@@ -1,6 +1,6 @@
 import logoWhite from '../../assets/logo-white.png'
 import { COMPANY_NAME, CONTACT_EMAIL, SOCIAL_LINKS, TAGLINE } from '../../config/site'
-import { NAV_ITEMS, SERVICES } from '../../data/content'
+import { NAV_ITEMS } from '../../data/content'
 import { BookingCta } from '../contact/BookingCta'
 import { mailtoHref } from '../../utils/contact'
 import { ArrowRight } from '../ui/Icons'
@@ -25,27 +25,13 @@ export function Footer() {
           <nav className="footer__col" aria-label="Footer">
             <p className="footer__heading">Explore</p>
             <ul>
-              {NAV_ITEMS.map((n) => (
+              {NAV_ITEMS.filter((n) => n.id !== 'contact').map((n) => (
                 <li key={n.id}>
                   <a href={`#${n.id}`}>{n.label}</a>
                 </li>
               ))}
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
             </ul>
           </nav>
-
-          <div className="footer__col">
-            <p className="footer__heading">Services</p>
-            <ul>
-              {SERVICES.map((s) => (
-                <li key={s.title}>
-                  <a href="#services">{s.title}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
 
           <div className="footer__col">
             <p className="footer__heading">Contact</p>

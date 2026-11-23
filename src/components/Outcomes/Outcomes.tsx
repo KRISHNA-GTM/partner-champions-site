@@ -11,7 +11,7 @@ export function Outcomes() {
           eyebrow="What changes"
           title={
             <>
-              From partner marketing scattered across teams to <span className="hl">a program that moves.</span>
+              From scattered activity to <span className="hl">partner momentum.</span>
             </>
           }
         />

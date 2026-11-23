@@ -1,12 +1,10 @@
-/**
- * Page content. Edit copy here; components render whatever these arrays contain.
- * Sell the relief first; the service name comes second.
- */
+/** Direct, execution-led page copy. */
 
 export const NAV_ITEMS = [
   { id: 'services', label: 'Services' },
   { id: 'work', label: 'Campaigns' },
   { id: 'approach', label: 'Our Approach' },
+  { id: 'contact', label: 'Contact' },
 ] as const
 
 export const AUDIENCE = [
@@ -16,161 +14,149 @@ export const AUDIENCE = [
   'Partner program leaders',
 ]
 
-/** Why partner programs stall. Highly recognizable bottlenecks partner leaders face daily. */
-export const CHALLENGES = [
-  {
-    title: 'The portal graveyard',
-    text: 'You loaded the partner portal with decks, battlecards and one-pagers. Nobody logs in. Without a turn-key campaign, assets sit untouched while partners sell whatever is easiest.',
-  },
-  {
-    title: 'Partners have sales reps, not marketers',
-    text: "Partners want closed deals, but have zero marketing staff to write sequences, spin up landing pages, or host webinars for your product. They can't build campaigns from scratch.",
-  },
-  {
-    title: 'Templates never run themselves',
-    text: 'Handing partners "customizable PDFs" or raw email copy leads to execution paralysis. Unless a campaign is packaged, co-branded and ready to launch, it never reaches buyers.',
-  },
-  {
-    title: 'Internal team bandwidth bottleneck',
-    text: 'Your internal team is fully booked hitting direct sales targets. Nobody has the dedicated hours to chase partner reps, coordinate joint approvals and manage campaign follow-up.',
-  },
-]
-
-/** Who does what. A responsibility diagram, read left to right. */
-export const FLOW = [
-  { label: 'Your team', note: 'Goals, product priorities and partner strategy', tone: 'base' },
-  { label: 'Partner Champions', note: 'We plan, create, coordinate and execute', tone: 'hub' },
-  { label: 'Your partners', note: 'Ready-to-use campaigns they take to market', tone: 'base' },
-  { label: 'Your market', note: 'Customers reached through partners they trust', tone: 'end' },
-] as const
-
-/** What the hub takes off your plate */
-export const FLOW_HANDOFF = [
-  'Turn-key campaigns',
-  'Co-branded assets',
-  'Partner outreach & enablement',
-  'Joint events & webinars',
-  'Pipeline follow-up',
-]
-
-export type ServiceIcon = 'enable' | 'campaign' | 'abm' | 'event' | 'cobrand' | 'direct'
-
-export type Service = {
-  icon: ServiceIcon
-  need: string
-  title: string
-  summary: string
+export const PROBLEM_DIAGNOSIS = {
+  eyebrow: 'Why partner programs stall',
+  headline: "Your partners signed up. So why aren't they marketing?",
+  situation: 'You recruited the partners. But nothing happens after onboarding.',
+  detail: "Campaigns never launch. Partners don't know what to promote. Your internal team keeps chasing reps who should already be selling.",
+  points: [
+    {
+      num: '01',
+      title: 'The portal graveyard',
+      text: 'Partner portals fill with decks and battlecards. Without a ready-to-run campaign, those assets sit untouched.',
+    },
+    {
+      num: '02',
+      title: 'Sales reps, not marketers',
+      text: 'Partners want to sell, but rarely have the marketing staff to write emails, build pages, or host webinars for your product.',
+    },
+    {
+      num: '03',
+      title: 'Templates do not launch themselves',
+      text: 'Raw copy and customizable PDFs leave partners with more work. Campaigns need to be packaged and ready to launch.',
+    },
+    {
+      num: '04',
+      title: 'No room on your team’s calendar',
+      text: 'Your internal team is focused on direct targets, leaving little time to coordinate approvals, partner reps, and follow-up.',
+    },
+  ],
 }
 
-/** Lead with what the buyer needs; the service name is the label. */
-export const SERVICES: Service[] = [
-  {
-    icon: 'campaign',
-    need: 'Get your partners marketing',
-    title: 'Partner Campaigns',
-    summary: 'Ready-to-run campaigns partners launch without building anything.',
-  },
-  {
-    icon: 'enable',
-    need: 'Give partners the tools to sell',
-    title: 'Partner Enablement',
-    summary: 'Messaging, playbooks and sales kits partners actually use.',
-  },
-  {
-    icon: 'cobrand',
-    need: 'Market with your partners',
-    title: 'Co-Marketing & Demand Generation',
-    summary: 'Content and campaigns that put both brands in front of customers.',
-  },
-  {
-    icon: 'abm',
-    need: 'Reach priority accounts together',
-    title: 'Account-Based Marketing',
-    summary: 'One target list, one message, coordinated outreach.',
-  },
-  {
-    icon: 'event',
-    need: 'Bring partners and customers together',
-    title: 'Webinars & Events',
-    summary: 'Joint events with promotion and follow-up handled.',
-  },
-  {
-    icon: 'direct',
-    need: 'Keep your partner audience active',
-    title: 'Partner Engagement',
-    summary: 'Targeted outreach that keeps partners involved between campaigns.',
-  },
-]
+export const SOLUTION_BRIDGE = {
+  eyebrow: 'The partner marketing connection',
+  headline: 'We become the execution engine connecting your strategy to partner sales.',
+  sub: 'We do the actual work so campaigns launch, partners engage, and joint pipeline grows.',
+  flow: [
+    {
+      step: '01',
+      role: 'Your brand',
+      focus: 'Strategy and priorities',
+      detail: 'Product priorities, target audiences, and growth goals.',
+      type: 'base',
+    },
+    {
+      step: '02',
+      role: 'Partner Champions',
+      focus: 'The execution engine',
+      detail: 'We plan, write, design, coordinate, and run the campaign.',
+      handoffs: ['Turn-key campaigns', 'Co-branded assets', 'Partner enablement', 'Joint webinars', 'Pipeline tracking'],
+      type: 'engine',
+    },
+    {
+      step: '03',
+      role: 'Your partners',
+      focus: 'Ready to activate',
+      detail: 'Finished campaigns their sales reps can take to market.',
+      type: 'base',
+    },
+    {
+      step: '04',
+      role: 'The market',
+      focus: 'Pipeline and revenue',
+      detail: 'Target customers reached through trusted partner relationships.',
+      type: 'end',
+    },
+  ],
+}
 
-/** A progression, not another services list */
+export const CAPABILITIES = {
+  eyebrow: 'What we take off your plate',
+  featured: {
+    tag: 'Core execution',
+    title: 'Turn-key partner campaigns',
+    summary: 'Complete, co-branded campaigns built around a clear customer offer. Partners can launch without writing copy, building pages, or designing graphics.',
+    deliverables: [
+      'Multi-touch email sequences',
+      'Co-branded landing pages',
+      'Webinar presentations and abstracts',
+      'Social promotion packs',
+      'Partner campaign calendars',
+    ],
+  },
+  pillars: [
+    {
+      tag: 'Demand generation',
+      title: 'Co-marketing and field campaigns',
+      summary: 'Joint programs that put both brands in front of target buyers. We handle partner alignment, approvals, and campaign coordination.',
+    },
+    {
+      tag: 'Sales acceleration',
+      title: 'Partner enablement and sales kits',
+      summary: 'Practical tools partner reps use: battlecards, talk tracks, email snippets, and customer leave-behinds.',
+    },
+  ],
+  support: [
+    {
+      title: 'Joint webinars and events',
+      summary: 'Event planning, slides, promotion, and attendee follow-up.',
+    },
+    {
+      title: 'Partner account-based marketing',
+      summary: 'Shared target accounts, messaging, and coordinated outreach.',
+    },
+    {
+      title: 'Partner activation',
+      summary: 'Outreach and MDF execution to keep partners engaged.',
+    },
+  ],
+}
+
 export const PROCESS = [
   {
     num: '01',
-    title: 'Discover',
-    verb: 'Understand',
-    description: "What's happening today? Which partners are worth activating? Where are the gaps?",
+    title: 'Plan',
+    verb: 'Align priorities',
+    description: 'Select focus partners, agree on commercial goals, and shape the customer offer.',
   },
   {
     num: '02',
-    title: 'Strategize',
-    verb: 'Prioritize',
-    description: 'Which partners, campaigns, audiences and programs deserve attention first.',
+    title: 'Build',
+    verb: 'Create campaigns',
+    description: 'Produce co-branded copy, landing pages, webinar slides, and partner sales kits.',
   },
   {
     num: '03',
-    title: 'Activate',
-    verb: 'Execute',
-    description: 'Build the assets, launch the campaigns, coordinate partners and get activity moving.',
+    title: 'Launch',
+    verb: 'Activate partners',
+    description: 'Equip partner reps, coordinate outreach, and manage campaign execution.',
   },
   {
     num: '04',
-    title: 'Optimize',
-    verb: 'Improve',
-    description: 'Review participation, engagement and results. Refine the next campaign.',
+    title: 'Refine',
+    verb: 'Track results',
+    description: 'Review participation and lead handoff, then improve the next campaign cycle.',
   },
 ]
 
-/** Before and after. Describes the work we control, not results we can't prove. */
-export const BEFORE = ['Ad hoc requests', 'Unused assets', 'Campaign delays', 'No clear owner']
-export const AFTER = ['A shared campaign calendar', 'Ready-to-use assets', 'Partners taking part', 'Managed execution']
+export const BEFORE = ['Ad hoc partner requests', 'Unused portal assets', 'Campaign delays', 'No clear owner']
+export const AFTER = ['A shared campaign calendar', 'Ready-to-use co-branded assets', 'Active partner participation', 'Managed execution']
 
-export type ExpertisePillar = {
-  num: string
-  title: string
-  summary: string
-}
-
-/** Core differentiators that set Partner Champions apart from traditional marketing agencies */
+/** Legacy copy retained for the unused Expertise component. */
+export type ExpertisePillar = { num: string; title: string; summary: string }
 export const EXPERTISE_PILLARS: ExpertisePillar[] = [
-  {
-    num: '01',
-    title: 'Ecosystem dynamics, not direct demand gen',
-    summary:
-      'General agencies treat partner marketing like standard outbound. We understand the three-way ecosystem: aligning vendor priorities, partner commercial goals, and end-customer trust without creating channel conflict.',
-  },
-  {
-    num: '02',
-    title: 'Frictionless execution for your partners',
-    summary:
-      'Partners carry multiple solutions and prioritize what is easiest to close. We deliver turn-key, co-branded campaigns their sales reps can launch in five minutes without asking their internal team for marketing help.',
-  },
-  {
-    num: '03',
-    title: 'Hands-on execution ownership',
-    summary:
-      'We do not hand you a strategy deck and walk away. We write the copy, produce the assets, coordinate with partner leads, manage event logistics, and ensure follow-up turns into pipeline.',
-  },
+  { num: '01', title: 'Partner ecosystem experience', summary: 'We align vendor priorities, partner goals, and customer needs.' },
+  { num: '02', title: 'Frictionless partner execution', summary: 'We prepare campaigns partners can take to market with little lift.' },
+  { num: '03', title: 'Hands-on ownership', summary: 'We produce the assets, coordinate partners, and manage follow-up.' },
 ]
-
-/** Expertise capability areas */
-export const EXPERTISE_AREAS = [
-  'Partner Co-Marketing Campaigns',
-  'Turn-Key Sales Kits & Talk Tracks',
-  'Joint Webinars & Partner Events',
-  'Account-Based Co-Marketing (ABM)',
-  'MDF Allocation & Campaign Execution',
-  'Partner Activation & Re-Engagement',
-]
-
-/** Retained for compatibility */
-export const EXPERTISE = EXPERTISE_AREAS
+export const EXPERTISE_AREAS = CAPABILITIES.support.map((item) => item.title)

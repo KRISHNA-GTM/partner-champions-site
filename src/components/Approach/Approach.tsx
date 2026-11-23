@@ -10,12 +10,8 @@ export function Approach() {
         <SectionHeading
           id="approach-title"
           eyebrow="Our approach"
-          title={
-            <>
-              A clear process. <span className="hl">You won't have to figure it out yourself.</span>
-            </>
-          }
-          lead="Four stages, one team, from first review to the next campaign."
+          title={<>From plan <span className="hl">to partner launch.</span></>}
+          lead="Four steps. One execution team."
         />
 
         <ol className="process">

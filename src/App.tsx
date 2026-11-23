@@ -1,7 +1,6 @@
 import { Approach } from './components/Approach/Approach'
 import { Challenge } from './components/Challenge/Challenge'
 import { ContactProvider } from './components/contact/ContactContext'
-import { Expertise } from './components/Expertise/Expertise'
 import { FinalCta } from './components/FinalCta/FinalCta'
 import { Footer } from './components/Footer/Footer'
 import { Header } from './components/Header/Header'
@@ -25,7 +24,6 @@ export default function App() {
         <Challenge />
         <Services />
         <Showcase />
-        <Expertise />
         <Approach />
         <Outcomes />
         <FinalCta />

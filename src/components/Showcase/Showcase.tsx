@@ -258,7 +258,7 @@ const PIECES = [
 ]
 
 export function Showcase() {
-  const [active, setActive] = useState(0)
+  const [active, setActive] = useState(2)
   const tabs = useRef<(HTMLButtonElement | null)[]>([])
   const piece = PIECES[active]
 
@@ -277,13 +277,13 @@ export function Showcase() {
       <div className="container">
         <SectionHeading
           id="work-title"
-          eyebrow="What we deliver"
+          eyebrow="Campaign showcase · illustrative concept"
           title={
             <>
-              Sample Campaign: <span className="hl">Cloud Cost Review</span>
+              One offer. <span className="hl">A complete partner campaign.</span>
             </>
           }
-          lead="A turn-key co-marketing campaign planned, produced and coordinated for your partners. Ready to drive pipeline without asking them to build anything."
+          lead="See how a Cloud Cost Review offer can carry from partner outreach to a co-branded landing page, webinar, and ready-to-use sales kit."
         />
 
         <div className="viewer reveal">

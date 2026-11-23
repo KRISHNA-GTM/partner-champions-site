@@ -1,5 +1,3 @@
-import { CONTACT_EMAIL } from '../../config/site'
-import { mailtoHref } from '../../utils/contact'
 import { BookingCta } from '../contact/BookingCta'
 import { ArrowRight } from '../ui/Icons'
 import './FinalCta.css'
@@ -25,19 +23,16 @@ export function FinalCta() {
       <div className="container final__inner">
         <p className="eyebrow reveal">Start here</p>
         <h2 id="final-title" className="final__title reveal">
-          Your partners are already part of your growth plan. Let's help them <span className="hl">put it into action.</span>
+          Put your partner program <span className="hl">to work.</span>
         </h2>
         <p className="lead reveal">
-          Schedule a 30-minute consultation to walk through your partner program, identify your execution bottlenecks, and discuss ready-to-run campaigns that get your partners to market.
+          Bring your partner marketing challenge. We’ll map the next practical step together in a 30-minute consultation.
         </p>
         <div className="final__actions reveal">
           <BookingCta className="btn btn--primary final__btn">
             Book a Partner Marketing Consultation <ArrowRight />
           </BookingCta>
         </div>
-        <p className="final__email reveal">
-          Prefer email? <a href={mailtoHref()}>{CONTACT_EMAIL}</a>
-        </p>
       </div>
     </section>
   )
